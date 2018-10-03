@@ -1,0 +1,9 @@
+# import Nationality from './generated/prisma.graphql'
+
+type Query {
+  nationality(nationality: String!): Nationality
+}
+
+type Mutation {
+  addNationality(nationality: String!, count: Int!): Nationality!
+}

@@ -1,0 +1,5 @@
+type Nationality {
+  id: ID! @unique
+  nationality: String! @unique
+  count: Int
+}

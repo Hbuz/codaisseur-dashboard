@@ -1,0 +1,280 @@
+# source: http://localhost:4466
+# timestamp: Wed Oct 03 2018 16:43:22 GMT+0200 (CEST)
+
+type AggregateNationality {
+  count: Int!
+}
+
+type BatchPayload {
+  """The number of nodes that have been affected by the Batch operation."""
+  count: Long!
+}
+
+"""
+The `Long` scalar type represents non-fractional signed whole numeric values.
+Long can represent values between -(2^63) and 2^63 - 1.
+"""
+scalar Long
+
+type Mutation {
+  createNationality(data: NationalityCreateInput!): Nationality!
+  updateNationality(data: NationalityUpdateInput!, where: NationalityWhereUniqueInput!): Nationality
+  deleteNationality(where: NationalityWhereUniqueInput!): Nationality
+  upsertNationality(where: NationalityWhereUniqueInput!, create: NationalityCreateInput!, update: NationalityUpdateInput!): Nationality!
+  updateManyNationalities(data: NationalityUpdateInput!, where: NationalityWhereInput): BatchPayload!
+  deleteManyNationalities(where: NationalityWhereInput): BatchPayload!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+type Nationality implements Node {
+  id: ID!
+  nationality: String!
+  count: Int
+}
+
+"""A connection to a list of items."""
+type NationalityConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [NationalityEdge]!
+  aggregate: AggregateNationality!
+}
+
+input NationalityCreateInput {
+  nationality: String!
+  count: Int
+}
+
+"""An edge in a connection."""
+type NationalityEdge {
+  """The item at the end of the edge."""
+  node: Nationality!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum NationalityOrderByInput {
+  id_ASC
+  id_DESC
+  nationality_ASC
+  nationality_DESC
+  count_ASC
+  count_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type NationalityPreviousValues {
+  id: ID!
+  nationality: String!
+  count: Int
+}
+
+type NationalitySubscriptionPayload {
+  mutation: MutationType!
+  node: Nationality
+  updatedFields: [String!]
+  previousValues: NationalityPreviousValues
+}
+
+input NationalitySubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [NationalitySubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [NationalitySubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [NationalitySubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: NationalityWhereInput
+}
+
+input NationalityUpdateInput {
+  nationality: String
+  count: Int
+}
+
+input NationalityWhereInput {
+  """Logical AND on all given filters."""
+  AND: [NationalityWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [NationalityWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [NationalityWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  nationality: String
+
+  """All values that are not equal to given value."""
+  nationality_not: String
+
+  """All values that are contained in given list."""
+  nationality_in: [String!]
+
+  """All values that are not contained in given list."""
+  nationality_not_in: [String!]
+
+  """All values less than the given value."""
+  nationality_lt: String
+
+  """All values less than or equal the given value."""
+  nationality_lte: String
+
+  """All values greater than the given value."""
+  nationality_gt: String
+
+  """All values greater than or equal the given value."""
+  nationality_gte: String
+
+  """All values containing the given string."""
+  nationality_contains: String
+
+  """All values not containing the given string."""
+  nationality_not_contains: String
+
+  """All values starting with the given string."""
+  nationality_starts_with: String
+
+  """All values not starting with the given string."""
+  nationality_not_starts_with: String
+
+  """All values ending with the given string."""
+  nationality_ends_with: String
+
+  """All values not ending with the given string."""
+  nationality_not_ends_with: String
+  count: Int
+
+  """All values that are not equal to given value."""
+  count_not: Int
+
+  """All values that are contained in given list."""
+  count_in: [Int!]
+
+  """All values that are not contained in given list."""
+  count_not_in: [Int!]
+
+  """All values less than the given value."""
+  count_lt: Int
+
+  """All values less than or equal the given value."""
+  count_lte: Int
+
+  """All values greater than the given value."""
+  count_gt: Int
+
+  """All values greater than or equal the given value."""
+  count_gte: Int
+}
+
+input NationalityWhereUniqueInput {
+  id: ID
+  nationality: String
+}
+
+"""An object with an ID"""
+interface Node {
+  """The id of the object."""
+  id: ID!
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+type Query {
+  nationalities(where: NationalityWhereInput, orderBy: NationalityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Nationality]!
+  nationality(where: NationalityWhereUniqueInput!): Nationality
+  nationalitiesConnection(where: NationalityWhereInput, orderBy: NationalityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NationalityConnection!
+
+  """Fetches an object given its ID"""
+  node(
+    """The ID of an object"""
+    id: ID!
+  ): Node
+}
+
+type Subscription {
+  nationality(where: NationalitySubscriptionWhereInput): NationalitySubscriptionPayload
+}
