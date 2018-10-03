@@ -1,0 +1,35 @@
+mutation {
+  NL: createNationality(data: { nationality: "NL", count: 569 }) {
+    id
+  }
+  IN: createNationality(data: { nationality: "IN", count: 64 }) {
+    id
+  }
+  US: createNationality(data: { nationality: "US", count: 48 }) {
+    id
+  }
+  GB: createNationality(data: { nationality: "GB", count: 46 }) {
+    id
+  }
+  IT: createNationality(data: { nationality: "IT", count: 37 }) {
+    id
+  }
+  BR: createNationality(data: { nationality: "BR", count: 33 }) {
+    id
+  }
+  RO: createNationality(data: { nationality: "RO", count: 26 }) {
+    id
+  }
+  IR: createNationality(data: { nationality: "IR", count: 23 }) {
+    id
+  }
+  TR: createNationality(data: { nationality: "TR", count: 22 }) {
+    id
+  }
+  ES: createNationality(data: { nationality: "ES", count: 20 }) {
+    id
+  }
+  NG: createNationality(data: { nationality: "NG", count: 19 }) {
+    id
+  }
+}

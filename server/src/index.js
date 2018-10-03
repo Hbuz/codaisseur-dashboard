@@ -12,37 +12,38 @@ const { Prisma } = require('prisma-binding')
 const path = require('path')
 
 
-const resolvers = {
-  Query: {
-    nationality: (_, args, context, info) => {
-      return context.prisma.query.nationality(
-        info,
-      )
-    },
-    getAllNationalities: (_, args, context, info) => {
-      return context.prisma.query.nationalities(
-        info,
-      )
-    }
-  },
-  Mutation: {
-    addNationality: (_, args, context, info) => {
-      return context.prisma.mutation.createNationality(
-        {
-          data: {
-            nationality: args.nationality,
-            count: args.count
-          },
-        },
-        info,
-      )
-    },
-  }
-}
+// const resolvers = {
+//   Query: {
+//     nationality: (_, args, context, info) => {
+//       return context.prisma.query.nationality(
+//         info,
+//       )
+//     },
+//     getAllNationalities: (_, args, context, info) => {
+//       return context.prisma.query.nationalities(
+//         info,
+//       )
+//     }
+//   },
+//   Mutation: {
+//     addNationality: (_, args, context, info) => {
+//       return context.prisma.mutation.createNationality(
+//         {
+//           data: {
+//             nationality: args.nationality,
+//             count: args.count
+//           },
+//         },
+//         info,
+//       )
+//     },
+//   }
+// }
 
 
 
 const typeDefs = importSchema(path.resolve('src/schema.graphql'))
+const resolvers = require('./resolvers')
 
 
 const server = new ApolloServer({
