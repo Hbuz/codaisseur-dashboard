@@ -4,8 +4,8 @@ const Koa = require('koa')
 const { ApolloServer, gql } = require('apollo-server-koa')
 const { importSchema } = require('graphql-import')
 
-// import { routes } from 'routes';
-// const routes = require('routes')
+// import { resolvers } from './resolvers'
+// const { resolvers } = require('./resolvers')
 
 // import { Prisma } from 'prisma-binding'
 const { Prisma } = require('prisma-binding')
@@ -16,6 +16,11 @@ const resolvers = {
   Query: {
     nationality: (_, args, context, info) => {
       return context.prisma.query.nationality(
+        info,
+      )
+    },
+    getAllNationalities: (_, args, context, info) => {
+      return context.prisma.query.nationalities(
         info,
       )
     }
