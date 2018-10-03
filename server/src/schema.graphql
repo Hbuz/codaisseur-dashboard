@@ -4,6 +4,8 @@ type Query {
   nationality(nationality: String!): Nationality
 }
 
+
+
 type Mutation {
   addNationality(nationality: String!, count: Int!): Nationality!
 }
