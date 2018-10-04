@@ -12,6 +12,7 @@ module.exports = {
     },
     getAllNationalities: (_, args, context, info) => {
       return context.prisma.query.nationalities(
+        { skip: args.skip, first: args.first, orderBy: args.orderBy },
         info,
       )
     },
