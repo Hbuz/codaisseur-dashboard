@@ -9,6 +9,16 @@ module.exports = {
       return context.prisma.query.nationalities(
         info,
       )
+    },
+    funny: (_, args, context, info) => {
+      return context.prisma.query.funny(
+        info,
+      )
+    },
+    getAllFunnies: (_, args, context, info) => {
+      return context.prisma.query.funnies(
+        info,
+      )
     }
   },
   Mutation: {

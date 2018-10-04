@@ -1,5 +1,9 @@
 # source: http://localhost:4466
-# timestamp: Wed Oct 03 2018 16:43:22 GMT+0200 (CEST)
+# timestamp: Thu Oct 04 2018 14:24:30 GMT+0200 (CEST)
+
+type AggregateFunny {
+  count: Int!
+}
 
 type AggregateNationality {
   count: Int!
@@ -10,6 +14,217 @@ type BatchPayload {
   count: Long!
 }
 
+type Funny implements Node {
+  id: ID!
+  item: String!
+  count: Int
+}
+
+"""A connection to a list of items."""
+type FunnyConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [FunnyEdge]!
+  aggregate: AggregateFunny!
+}
+
+input FunnyCreateInput {
+  item: String!
+  count: Int
+}
+
+"""An edge in a connection."""
+type FunnyEdge {
+  """The item at the end of the edge."""
+  node: Funny!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum FunnyOrderByInput {
+  id_ASC
+  id_DESC
+  item_ASC
+  item_DESC
+  count_ASC
+  count_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type FunnyPreviousValues {
+  id: ID!
+  item: String!
+  count: Int
+}
+
+type FunnySubscriptionPayload {
+  mutation: MutationType!
+  node: Funny
+  updatedFields: [String!]
+  previousValues: FunnyPreviousValues
+}
+
+input FunnySubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [FunnySubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [FunnySubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [FunnySubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: FunnyWhereInput
+}
+
+input FunnyUpdateInput {
+  item: String
+  count: Int
+}
+
+input FunnyWhereInput {
+  """Logical AND on all given filters."""
+  AND: [FunnyWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [FunnyWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [FunnyWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  item: String
+
+  """All values that are not equal to given value."""
+  item_not: String
+
+  """All values that are contained in given list."""
+  item_in: [String!]
+
+  """All values that are not contained in given list."""
+  item_not_in: [String!]
+
+  """All values less than the given value."""
+  item_lt: String
+
+  """All values less than or equal the given value."""
+  item_lte: String
+
+  """All values greater than the given value."""
+  item_gt: String
+
+  """All values greater than or equal the given value."""
+  item_gte: String
+
+  """All values containing the given string."""
+  item_contains: String
+
+  """All values not containing the given string."""
+  item_not_contains: String
+
+  """All values starting with the given string."""
+  item_starts_with: String
+
+  """All values not starting with the given string."""
+  item_not_starts_with: String
+
+  """All values ending with the given string."""
+  item_ends_with: String
+
+  """All values not ending with the given string."""
+  item_not_ends_with: String
+  count: Int
+
+  """All values that are not equal to given value."""
+  count_not: Int
+
+  """All values that are contained in given list."""
+  count_in: [Int!]
+
+  """All values that are not contained in given list."""
+  count_not_in: [Int!]
+
+  """All values less than the given value."""
+  count_lt: Int
+
+  """All values less than or equal the given value."""
+  count_lte: Int
+
+  """All values greater than the given value."""
+  count_gt: Int
+
+  """All values greater than or equal the given value."""
+  count_gte: Int
+}
+
+input FunnyWhereUniqueInput {
+  id: ID
+  item: String
+}
+
 """
 The `Long` scalar type represents non-fractional signed whole numeric values.
 Long can represent values between -(2^63) and 2^63 - 1.
@@ -18,11 +233,17 @@ scalar Long
 
 type Mutation {
   createNationality(data: NationalityCreateInput!): Nationality!
+  createFunny(data: FunnyCreateInput!): Funny!
   updateNationality(data: NationalityUpdateInput!, where: NationalityWhereUniqueInput!): Nationality
+  updateFunny(data: FunnyUpdateInput!, where: FunnyWhereUniqueInput!): Funny
   deleteNationality(where: NationalityWhereUniqueInput!): Nationality
+  deleteFunny(where: FunnyWhereUniqueInput!): Funny
   upsertNationality(where: NationalityWhereUniqueInput!, create: NationalityCreateInput!, update: NationalityUpdateInput!): Nationality!
+  upsertFunny(where: FunnyWhereUniqueInput!, create: FunnyCreateInput!, update: FunnyUpdateInput!): Funny!
   updateManyNationalities(data: NationalityUpdateInput!, where: NationalityWhereInput): BatchPayload!
+  updateManyFunnies(data: FunnyUpdateInput!, where: FunnyWhereInput): BatchPayload!
   deleteManyNationalities(where: NationalityWhereInput): BatchPayload!
+  deleteManyFunnies(where: FunnyWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -265,8 +486,11 @@ type PageInfo {
 
 type Query {
   nationalities(where: NationalityWhereInput, orderBy: NationalityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Nationality]!
+  funnies(where: FunnyWhereInput, orderBy: FunnyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Funny]!
   nationality(where: NationalityWhereUniqueInput!): Nationality
+  funny(where: FunnyWhereUniqueInput!): Funny
   nationalitiesConnection(where: NationalityWhereInput, orderBy: NationalityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NationalityConnection!
+  funniesConnection(where: FunnyWhereInput, orderBy: FunnyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FunnyConnection!
 
   """Fetches an object given its ID"""
   node(
@@ -277,4 +501,5 @@ type Query {
 
 type Subscription {
   nationality(where: NationalitySubscriptionWhereInput): NationalitySubscriptionPayload
+  funny(where: FunnySubscriptionWhereInput): FunnySubscriptionPayload
 }
