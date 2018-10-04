@@ -3,3 +3,9 @@ type Nationality {
   nationality: String! @unique
   count: Int
 }
+
+type Funny {
+  id: ID! @unique
+  item: String! @unique
+  count: Int
+}

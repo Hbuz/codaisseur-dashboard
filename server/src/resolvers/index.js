@@ -1,4 +1,3 @@
-const Nationality = require('./Nationality')
-const Nationality1 = require('./Nationality.1')
+const QueryMutation = require('./QueryMutation')
 
-module.exports = Nationality, Nationality1
+module.exports = QueryMutation
