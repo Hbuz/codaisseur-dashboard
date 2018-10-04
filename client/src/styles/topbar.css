@@ -3,6 +3,9 @@
     grid-template-columns: 1fr 2fr;
     height: 12.5vh;
     background-color: white;
+    position: sticky; /* NOT STICKY!!!! */
+    top: 87.5vh;
+    width: 100%;
 }
 
 .btn_pageTitle_title-color h1{
