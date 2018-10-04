@@ -2,6 +2,11 @@ module.exports = {
   Query: {
     nationality: (_, args, context, info) => {
       return context.prisma.query.nationality(
+        {
+          where: {
+            nationality: args.nationality,
+          },
+        },
         info,
       )
     },
@@ -12,6 +17,11 @@ module.exports = {
     },
     funny: (_, args, context, info) => {
       return context.prisma.query.funny(
+        {
+          where: {
+            item: args.item,
+          },
+        },
         info,
       )
     },
