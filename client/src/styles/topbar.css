@@ -1,0 +1,20 @@
+.topBar {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 12.5vh;
+    background-color: white;
+}
+
+.btn_pageTitle_title-color h1{
+    color: #D32F2F;
+    font-weight: bold !important;
+    padding-bottom: 2%;
+    font-size: 2em;
+}
+
+.btn_logo_logo-size img{
+    height: 7vh;
+    width: 20vw;
+    padding-top: 4%;
+    padding-left: 4%;
+}
