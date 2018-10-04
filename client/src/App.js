@@ -3,6 +3,7 @@ import "./App.css";
 import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 import gql from "graphql-tag";
+import { Query } from "react-apollo";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -10,44 +11,32 @@ const client = new ApolloClient({
 
 class App extends Component {
   render() {
-    // const yeahMan = () => 
-    //   client.query({
-    //     query: gql`
-    //       {
-    //         getAllNationalities {
-    //           nationality
-    //           count
-    //         }
-    //       }
-    //     `
-    //   })
-    // }).then( result => console.log(JSON.stringify(result)))
-
-    async function yeahMan(){ 
-      return await client.query({
-        query: gql`
-          {
-            getAllNationalities {
-              nationality
-              count
-            }
-          }
-        `
-      })
-    }
-
-
-    const result = yeahMan();
-
-    console.log("RESS: " + JSON.stringify(result));
+   
 
     return (
       <ApolloProvider client={client}>
-        <div>
-          {/* {result.data.getAllNationalities.map(nat => 
-          <h6>{nat}</h6>
-          )} */}
-        </div>
+        <Query
+          query={gql`
+      {
+        getAllFunnies {
+          item
+          count
+        }
+      }
+    `}
+        >
+          {({ loading, error, data }) => {
+            if (loading) return <p>Loading...</p>;
+            if (error) return <p>Error :(</p>;
+              console.log("RESS: " + JSON.stringify(data));
+
+            return data.getAllFunnies.map(({ item, count }) => (
+              <div key={item}>
+                <p>{`${item}: ${count}`}</p>
+              </div>
+            ));
+          }}
+        </Query>
       </ApolloProvider>
     );
   }
