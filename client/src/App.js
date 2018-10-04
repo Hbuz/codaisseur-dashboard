@@ -3,6 +3,7 @@ import "./App.css";
 import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 import gql from "graphql-tag";
+import TopBar  from "./components/layout/TopBar"
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -43,6 +44,7 @@ class App extends Component {
 
     return (
       <ApolloProvider client={client}>
+      <TopBar class='header page__header'/>
         <div>
           {/* {result.data.getAllNationalities.map(nat => 
           <h6>{nat}</h6>
