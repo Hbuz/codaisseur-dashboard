@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
+import { Route, Redirect } from 'react-router-dom'
+import FunnyContainer from './components/FunnyContainer'
+import TopBar  from "./components/layout/TopBar"
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -11,32 +12,21 @@ const client = new ApolloClient({
 
 class App extends Component {
   render() {
-   
+
 
     return (
       <ApolloProvider client={client}>
-        <Query
-          query={gql`
-      {
-        getAllFunnies {
-          item
-          count
-        }
-      }
-    `}
-        >
-          {({ loading, error, data }) => {
-            if (loading) return <p>Loading...</p>;
-            if (error) return <p>Error :(</p>;
-              console.log("RESS: " + JSON.stringify(data));
-
-            return data.getAllFunnies.map(({ item, count }) => (
-              <div key={item}>
-                <p>{`${item}: ${count}`}</p>
-              </div>
-            ));
-          }}
-        </Query>
+        <div>
+          <nav>
+            <TopBar class='header page__header' />
+          </nav>
+          <main style={{ marginTop: 75 }}>
+            <Route exact path="/" component={FunnyContainer} />
+          </main>
+          <footer>
+            {/* <Footer /> */}
+          </footer>
+        </div>
       </ApolloProvider>
     );
   }
