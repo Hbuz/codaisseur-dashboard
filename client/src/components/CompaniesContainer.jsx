@@ -1,5 +1,6 @@
 import * as React from 'react'
 import CompaniesDetail from './CompaniesDetail'
+import CompaniesOverview from './CompaniesOverview'
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 
@@ -19,7 +20,7 @@ class CompaniesContainer extends React.PureComponent {
 
         return data.getAllCompanies.map((company) => (
           <div key={company.item}>
-            <CompaniesDetail company={company} />
+            <CompaniesOverview company={company} />
           </div>
         ));
       }}
