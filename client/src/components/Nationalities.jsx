@@ -1,4 +1,5 @@
 import * as React from 'react'
+import '../styles/nationalities.css'
 
 const API = 'https://restcountries.eu/rest/v2/alpha/';
 
@@ -27,7 +28,9 @@ class Nationalities extends React.PureComponent {
   render() {
     return (<div>
       <h1>{`${this.props.nationality.nationality}: ${this.props.nationality.count}` }</h1>
-      <img src={this.state.flag} alt={`${this.state.name} flag`} />
+      <div className="btn_nationalities-flags">
+        <img src={this.state.flag} alt={`${this.state.name} flag`} />
+      </div>
     </div>)
   }
 }
