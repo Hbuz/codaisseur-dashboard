@@ -6,8 +6,8 @@ body {
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(./assets/bdf308de717706bd538c35d98a452c31.png);
-  background-size: cover;
+  /* background-image: url(./assets/bdf308de717706bd538c35d98a452c31.png);
+  background-size: cover; */
 }
 
 code {
