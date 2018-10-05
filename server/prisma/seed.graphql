@@ -33,6 +33,7 @@ mutation {
     id
   }
 
+
   coffee: createFunny(data: {item: "coffee", count: 1}){
     id
   }
@@ -45,4 +46,10 @@ mutation {
   swear_word: createFunny(data: {item: "swear word", count: 2}){
     id
   }
+
+
+  ing:createCompany(data: {name: "ING direct", city: "Amsterdam", numberOfStudents: 5}){id}
+  ns:createCompany(data: {name: "Nederlandse Spoorwegen", city: "Amsterdam", numberOfStudents: 1}){id}
+  greenHome:createCompany(data: {name: "Green Home", city: "Amsterdam", numberOfStudents: 4}){id}
+  rabobank: createCompany(data: {name: "Rabobank", city: "Utrecht", numberOfStudents: 2}){id}
 }
