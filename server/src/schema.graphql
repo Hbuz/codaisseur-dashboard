@@ -1,9 +1,11 @@
 # import Nationality from './generated/prisma.graphql'
 # import Funny from './generated/prisma.graphql'
+# import NationalityOrderByInput from "./generated/prisma.graphql"
+
 
 type Query {
   nationality(nationality: String!): Nationality
-  getAllNationalities: [Nationality!]!
+  getAllNationalities(skip: Int, first: Int, orderBy: NationalityOrderByInput): [Nationality!]!
   funny(item: String!): Funny
   getAllFunnies: [Funny!]
 }
