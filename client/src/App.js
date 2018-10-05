@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
-import gql from "graphql-tag";
+import { Route, Redirect } from 'react-router-dom'
+import FunnyContainer from './components/FunnyContainer'
+import TopBar  from "./components/layout/TopBar"
+import NationalitiesContainer from './components/NationalitiesContainer'
+import AverageSalary from './components/AverageSalary'
+import MaleFemaleAge from './components/MaleFemaleAge'
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -10,43 +15,23 @@ const client = new ApolloClient({
 
 class App extends Component {
   render() {
-    // const yeahMan = () => 
-    //   client.query({
-    //     query: gql`
-    //       {
-    //         getAllNationalities {
-    //           nationality
-    //           count
-    //         }
-    //       }
-    //     `
-    //   })
-    // }).then( result => console.log(JSON.stringify(result)))
 
-    async function yeahMan(){ 
-      return await client.query({
-        query: gql`
-          {
-            getAllNationalities {
-              nationality
-              count
-            }
-          }
-        `
-      })
-    }
-
-
-    const result = yeahMan();
-
-    console.log("RESS: " + JSON.stringify(result));
 
     return (
       <ApolloProvider client={client}>
         <div>
-          {/* {result.data.getAllNationalities.map(nat => 
-          <h6>{nat}</h6>
-          )} */}
+          <nav>
+            <TopBar class='header page__header' />
+          </nav>
+          <main style={{ marginTop: 75 }}>
+            <Route exact path="/" component={FunnyContainer} />
+            <NationalitiesContainer />
+            <AverageSalary />
+            <MaleFemaleAge />
+          </main>
+          <footer>
+            {/* <Footer /> */}
+          </footer>
         </div>
       </ApolloProvider>
     );
