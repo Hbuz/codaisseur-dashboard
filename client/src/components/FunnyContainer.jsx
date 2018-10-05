@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Group2 from '../assets/Group2.svg'
+import Group2 from '../assets/Group2OLD.svg'
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import { HexGrid, Layout, Hexagon, Text, Pattern, GridGenerator, Path, Hex } from 'react-hexgrid';
@@ -33,8 +33,11 @@ class FunnyContainer extends React.PureComponent {
             <HexGrid width={1200} height={800} viewBox="-50 -40 100 100">
               {/* Main grid with bit hexagons, all manual */}
               <Layout size={hexagonSize} flat={true} spacing={1.1} origin={{ x: 0, y: 0 }}>
-                <Hexagon q={0} r={0} s={0} fill="pat-1">
-                  <Text x={0} y={18} >1, -1, 0</Text>
+                <Hexagon q={0} r={0} s={0}>
+                  <Text x={0} y={18} >aaa</Text>
+                  <Text fill="pat-1">
+                    
+                  </Text>
                   <Text x={0} y={-18}>1, -1, 0</Text>
                 </Hexagon>
 
@@ -62,7 +65,7 @@ class FunnyContainer extends React.PureComponent {
                 {moreHexas.map((hex, i) => <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} />)}
               </Layout> */}
               {/* You can define multiple patterns and switch between them with "fill" prop on Hexagon */}
-              <Pattern id="pat-1" size={{x: 30, y: 26}} link={Group2} />
+              <Pattern id="pat-1" size={{ x: 30, y: 26 }} link={Group2}>sdadasdsa </Pattern>
               {/* <Pattern id="pat-1" link="http://lorempixel.com/400/400/cats/1/" size={hexagonSize} /> */}
               {/* <Pattern id="pat-2" link="http://lorempixel.com/400/400/cats/2/" size={hexagonSize} /> */}
             </HexGrid>
