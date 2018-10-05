@@ -8,7 +8,7 @@ class NationalitiesContainer extends React.PureComponent {
   render() {
     return <Query
       query={gql`
-      {
+        {
          getAllNationalities(
             first: 5
             skip: 0
