@@ -7,6 +7,7 @@ import FunnyContainer from './components/FunnyContainer'
 import TopBar  from "./components/layout/TopBar"
 import NationalitiesContainer from './components/NationalitiesContainer'
 import AverageSalary from './components/AverageSalary'
+import MaleFemaleAge from './components/MaleFemaleAge'
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -26,6 +27,7 @@ class App extends Component {
             <Route exact path="/" component={FunnyContainer} />
             <NationalitiesContainer />
             <AverageSalary />
+            <MaleFemaleAge />
           </main>
           <footer>
             {/* <Footer /> */}
