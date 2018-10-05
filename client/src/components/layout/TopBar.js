@@ -10,11 +10,11 @@ export default function TopBar(props) {
         <img src={codaisseurLogo} alt="codaisseur logo"/>
       </a>
       </div>
-      <div className='btn_pageTitle_title-size'>
+      {/* <div className='btn_pageTitle_title-size'>
         <div className='btn_pageTitle_title-color'>
           <h1>Welcome to Codaisseur</h1>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

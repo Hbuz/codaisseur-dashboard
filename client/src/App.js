@@ -21,35 +21,38 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <div>
-          <nav>
+          {/* <nav>
             <TopBar class='header page__header' />
-          </nav>
+          </nav> */}
           <main style={{ marginTop: 75 }}>
-            <Grid container direction="row" justify="center" alignItems="flex-start">
+            <Grid container direction="row" justify="space-evenly" alignItems="flex-start">
               <Grid item>
-                <Grid container>
+                <Grid container direction="column">
                   <Grid item>
+                  <TopBar/>
+                  </Grid>
+                  <Grid item style={{backgroundColor:"#E94C4C"}}>
                     <FunnyContainer />
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item>
                 <Grid container>
-                  <Grid item>
+                  <Grid item style={{backgroundColor:"#FFFFFF"}}>
                     <NationalitiesContainer />
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item>
                 <Grid container>
-                  <Grid item>
+                  <Grid item style={{backgroundColor:"#E94C4C"}}>
                     <AverageSalary />
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item>
                 <Grid container>
-                  <Grid item>
+                  <Grid item style={{backgroundColor:"#FFFFFF"}}>
                     <MaleFemaleAge />
                   </Grid>
                 </Grid>

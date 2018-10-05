@@ -1,10 +1,10 @@
 .topBar {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    /* display: grid;
+    grid-template-columns: 1fr 2fr; */
     height: 12.5vh;
     background-color: white;
-    position: sticky; /* NOT STICKY!!!! */
-    top: 87.5vh;
+    /* position: sticky; NOT STICKY!!!! */
+    /* top: 87.5vh; */
     width: 100%;
 }
 
@@ -17,7 +17,7 @@
 
 .btn_logo_logo-size img{
     height: 7vh;
-    width: 20vw;
+    width: 7vw;
     padding-top: 4%;
     padding-left: 4%;
 }
