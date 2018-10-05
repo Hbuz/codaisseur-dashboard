@@ -4,10 +4,11 @@ import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 import { Route, Redirect } from 'react-router-dom'
 import FunnyContainer from './components/FunnyContainer'
-import TopBar  from "./components/layout/TopBar"
+import TopBar from "./components/layout/TopBar"
 import NationalitiesContainer from './components/NationalitiesContainer'
 import AverageSalary from './components/AverageSalary'
 import MaleFemaleAge from './components/MaleFemaleAge'
+import Grid from '@material-ui/core/Grid'
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -20,14 +21,43 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <div>
-          <nav>
+          {/* <nav>
             <TopBar class='header page__header' />
-          </nav>
+          </nav> */}
           <main style={{ marginTop: 75 }}>
-            <Route exact path="/" component={FunnyContainer} />
-            <NationalitiesContainer />
-            <AverageSalary />
-            <MaleFemaleAge />
+            <Grid container direction="row" justify="space-evenly" alignItems="flex-start">
+              <Grid item>
+                <Grid container direction="column">
+                  <Grid item>
+                  <TopBar/>
+                  </Grid>
+                  <Grid item style={{backgroundColor:"#E94C4C"}}>
+                    <FunnyContainer />
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item>
+                <Grid container>
+                  <Grid item style={{backgroundColor:"#FFFFFF"}}>
+                    <NationalitiesContainer />
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item>
+                <Grid container>
+                  <Grid item style={{backgroundColor:"#E94C4C"}}>
+                    <AverageSalary />
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item>
+                <Grid container>
+                  <Grid item style={{backgroundColor:"#FFFFFF"}}>
+                    <MaleFemaleAge />
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
           </main>
           <footer>
             {/* <Footer /> */}
