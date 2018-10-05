@@ -9,3 +9,10 @@ type Funny {
   item: String! @unique
   count: Int
 }
+
+type Company {
+  id: ID! @unique
+  name: String! @unique
+  city: String!
+  numberOfStudents: Int
+}

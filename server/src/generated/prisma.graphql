@@ -1,5 +1,9 @@
 # source: http://localhost:4466
-# timestamp: Thu Oct 04 2018 14:24:30 GMT+0200 (CEST)
+# timestamp: Fri Oct 05 2018 14:55:59 GMT+0200 (CEST)
+
+type AggregateCompany {
+  count: Int!
+}
 
 type AggregateFunny {
   count: Int!
@@ -12,6 +16,263 @@ type AggregateNationality {
 type BatchPayload {
   """The number of nodes that have been affected by the Batch operation."""
   count: Long!
+}
+
+type Company implements Node {
+  id: ID!
+  name: String!
+  city: String!
+  numberOfStudents: Int
+}
+
+"""A connection to a list of items."""
+type CompanyConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [CompanyEdge]!
+  aggregate: AggregateCompany!
+}
+
+input CompanyCreateInput {
+  name: String!
+  city: String!
+  numberOfStudents: Int
+}
+
+"""An edge in a connection."""
+type CompanyEdge {
+  """The item at the end of the edge."""
+  node: Company!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum CompanyOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  city_ASC
+  city_DESC
+  numberOfStudents_ASC
+  numberOfStudents_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type CompanyPreviousValues {
+  id: ID!
+  name: String!
+  city: String!
+  numberOfStudents: Int
+}
+
+type CompanySubscriptionPayload {
+  mutation: MutationType!
+  node: Company
+  updatedFields: [String!]
+  previousValues: CompanyPreviousValues
+}
+
+input CompanySubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CompanySubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CompanySubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CompanySubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: CompanyWhereInput
+}
+
+input CompanyUpdateInput {
+  name: String
+  city: String
+  numberOfStudents: Int
+}
+
+input CompanyWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CompanyWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CompanyWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CompanyWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  name: String
+
+  """All values that are not equal to given value."""
+  name_not: String
+
+  """All values that are contained in given list."""
+  name_in: [String!]
+
+  """All values that are not contained in given list."""
+  name_not_in: [String!]
+
+  """All values less than the given value."""
+  name_lt: String
+
+  """All values less than or equal the given value."""
+  name_lte: String
+
+  """All values greater than the given value."""
+  name_gt: String
+
+  """All values greater than or equal the given value."""
+  name_gte: String
+
+  """All values containing the given string."""
+  name_contains: String
+
+  """All values not containing the given string."""
+  name_not_contains: String
+
+  """All values starting with the given string."""
+  name_starts_with: String
+
+  """All values not starting with the given string."""
+  name_not_starts_with: String
+
+  """All values ending with the given string."""
+  name_ends_with: String
+
+  """All values not ending with the given string."""
+  name_not_ends_with: String
+  city: String
+
+  """All values that are not equal to given value."""
+  city_not: String
+
+  """All values that are contained in given list."""
+  city_in: [String!]
+
+  """All values that are not contained in given list."""
+  city_not_in: [String!]
+
+  """All values less than the given value."""
+  city_lt: String
+
+  """All values less than or equal the given value."""
+  city_lte: String
+
+  """All values greater than the given value."""
+  city_gt: String
+
+  """All values greater than or equal the given value."""
+  city_gte: String
+
+  """All values containing the given string."""
+  city_contains: String
+
+  """All values not containing the given string."""
+  city_not_contains: String
+
+  """All values starting with the given string."""
+  city_starts_with: String
+
+  """All values not starting with the given string."""
+  city_not_starts_with: String
+
+  """All values ending with the given string."""
+  city_ends_with: String
+
+  """All values not ending with the given string."""
+  city_not_ends_with: String
+  numberOfStudents: Int
+
+  """All values that are not equal to given value."""
+  numberOfStudents_not: Int
+
+  """All values that are contained in given list."""
+  numberOfStudents_in: [Int!]
+
+  """All values that are not contained in given list."""
+  numberOfStudents_not_in: [Int!]
+
+  """All values less than the given value."""
+  numberOfStudents_lt: Int
+
+  """All values less than or equal the given value."""
+  numberOfStudents_lte: Int
+
+  """All values greater than the given value."""
+  numberOfStudents_gt: Int
+
+  """All values greater than or equal the given value."""
+  numberOfStudents_gte: Int
+}
+
+input CompanyWhereUniqueInput {
+  id: ID
+  name: String
 }
 
 type Funny implements Node {
@@ -234,16 +495,22 @@ scalar Long
 type Mutation {
   createNationality(data: NationalityCreateInput!): Nationality!
   createFunny(data: FunnyCreateInput!): Funny!
+  createCompany(data: CompanyCreateInput!): Company!
   updateNationality(data: NationalityUpdateInput!, where: NationalityWhereUniqueInput!): Nationality
   updateFunny(data: FunnyUpdateInput!, where: FunnyWhereUniqueInput!): Funny
+  updateCompany(data: CompanyUpdateInput!, where: CompanyWhereUniqueInput!): Company
   deleteNationality(where: NationalityWhereUniqueInput!): Nationality
   deleteFunny(where: FunnyWhereUniqueInput!): Funny
+  deleteCompany(where: CompanyWhereUniqueInput!): Company
   upsertNationality(where: NationalityWhereUniqueInput!, create: NationalityCreateInput!, update: NationalityUpdateInput!): Nationality!
   upsertFunny(where: FunnyWhereUniqueInput!, create: FunnyCreateInput!, update: FunnyUpdateInput!): Funny!
+  upsertCompany(where: CompanyWhereUniqueInput!, create: CompanyCreateInput!, update: CompanyUpdateInput!): Company!
   updateManyNationalities(data: NationalityUpdateInput!, where: NationalityWhereInput): BatchPayload!
   updateManyFunnies(data: FunnyUpdateInput!, where: FunnyWhereInput): BatchPayload!
+  updateManyCompanies(data: CompanyUpdateInput!, where: CompanyWhereInput): BatchPayload!
   deleteManyNationalities(where: NationalityWhereInput): BatchPayload!
   deleteManyFunnies(where: FunnyWhereInput): BatchPayload!
+  deleteManyCompanies(where: CompanyWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -487,10 +754,13 @@ type PageInfo {
 type Query {
   nationalities(where: NationalityWhereInput, orderBy: NationalityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Nationality]!
   funnies(where: FunnyWhereInput, orderBy: FunnyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Funny]!
+  companies(where: CompanyWhereInput, orderBy: CompanyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Company]!
   nationality(where: NationalityWhereUniqueInput!): Nationality
   funny(where: FunnyWhereUniqueInput!): Funny
+  company(where: CompanyWhereUniqueInput!): Company
   nationalitiesConnection(where: NationalityWhereInput, orderBy: NationalityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NationalityConnection!
   funniesConnection(where: FunnyWhereInput, orderBy: FunnyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FunnyConnection!
+  companiesConnection(where: CompanyWhereInput, orderBy: CompanyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CompanyConnection!
 
   """Fetches an object given its ID"""
   node(
@@ -502,4 +772,5 @@ type Query {
 type Subscription {
   nationality(where: NationalitySubscriptionWhereInput): NationalitySubscriptionPayload
   funny(where: FunnySubscriptionWhereInput): FunnySubscriptionPayload
+  company(where: CompanySubscriptionWhereInput): CompanySubscriptionPayload
 }

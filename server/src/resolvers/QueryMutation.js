@@ -30,7 +30,23 @@ module.exports = {
       return context.prisma.query.funnies(
         info,
       )
-    }
+    },
+    company: (_, args, context, info) => {
+      return context.prisma.query.company(
+        {
+          where: {
+            company: args.company,
+          },
+        },
+        info,
+      )
+    },
+    getAllCompanies: (_, args, context, info) => {
+      return context.prisma.query.companies(
+        { skip: args.skip, first: args.first, orderBy: args.orderBy },
+        info,
+      )
+    },
   },
   Mutation: {
     addNationality: (_, args, context, info) => {
