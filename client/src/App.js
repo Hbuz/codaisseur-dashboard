@@ -6,6 +6,7 @@ import { Route, Redirect } from 'react-router-dom'
 import FunnyContainer from './components/FunnyContainer'
 import TopBar  from "./components/layout/TopBar"
 import NationalitiesContainer from './components/NationalitiesContainer'
+import AverageSalary from './components/AverageSalary'
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -24,6 +25,7 @@ class App extends Component {
           <main style={{ marginTop: 75 }}>
             <Route exact path="/" component={FunnyContainer} />
             <NationalitiesContainer />
+            <AverageSalary />
           </main>
           <footer>
             {/* <Footer /> */}
