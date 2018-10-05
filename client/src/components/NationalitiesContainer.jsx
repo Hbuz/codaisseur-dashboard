@@ -9,21 +9,21 @@ class NationalitiesContainer extends React.PureComponent {
     return <Query
       query={gql`
       {
-        getAllNationalities {
-          nationality
-          count
-        }
+         getAllNationalities(
+            first: 5
+            skip: 0
+            orderBy: count_DESC) {
+            nationality
+            count}
       }`}
     >
       {({ loading, error, data }) => {
         if (loading) return <p>Loading...</p>;
         if (error) return <p>Error :(</p>;
-        console.log("RESS: " + JSON.stringify(data));
 
         return data.getAllNationalities.map((nationality) => (
           <div key={nationality.item}>
             <Nationalities nationality={nationality} />
-            {console.log(nationality)}
           </div>
         ));
       }}
