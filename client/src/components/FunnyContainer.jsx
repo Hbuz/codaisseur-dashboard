@@ -2,7 +2,6 @@ import * as React from 'react'
 import Funny from './Funny'
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import './layout/Funny.css';
 
 class FunnyContainer extends React.PureComponent {
 
