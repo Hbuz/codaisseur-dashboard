@@ -49,11 +49,13 @@ module.exports = {
     },
     
     getAllStudents: (_, args, context, info) => {
+      // console.log("GET ALL STUDENTS")
       return context.prisma.query.students(
         info,
       )
     },
     student: (_, args, context, info) => {
+      // console.log("GET ONE STUDENT")
       return context.prisma.query.student(
         {
           where: {
