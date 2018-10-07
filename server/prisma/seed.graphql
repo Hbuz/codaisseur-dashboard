@@ -61,4 +61,13 @@ mutation {
     graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
   s4: createStudent(data: {name: "John Smith", age:26, gender:"M",city:"Rotterdam", description:"bla bla bla bla", 
     graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
+
+
+    e1: createEvents(data: {name: "MeetUP", date: "10-08-2018 10:00", description:"", where:"Codaisseur Building"}) {id}
+    e2: createEvents(data: {name: "Demo Night", date: "12-10-2018 16:00", description:"", where:"Codaisseur Building"}) {id}
+    e3: createEvents(data: {name: "Open Evening", date: "11-06-2018 20:00", description:"", where:"Codaisseur Building"}) {id}
+    e4: createEvents(data: {name: "Start academy", date: "10-12-2018 09:30", description:"", where:"Codaisseur Building"}) {id}
+    e5: createEvents(data: {name: "Bootcamp", date: "10-12-2018 09:30", description:"", where:"Codaisseur Building"}) {id}
+    e6: createEvents(data: {name: "Conference", date: "10-26-2018 09:00", description:"", where:"Codaisseur Building"}) {id}
+
 }

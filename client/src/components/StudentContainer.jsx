@@ -3,6 +3,7 @@ import Student from './Student'
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 
+
 class StudentContainer extends React.PureComponent {
 
   constructor(props) {
@@ -34,7 +35,7 @@ class StudentContainer extends React.PureComponent {
         if (loading) return <p>Loading...</p>;
         if (error) return <p>Error :(</p>;
         const numberOfStudents = data.getAllStudents.length
-        
+
         setInterval(() => {
           const randomID = data.getAllStudents[Math.floor((Math.random() * numberOfStudents))].id
           if (randomID !== this.state.randomID)

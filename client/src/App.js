@@ -10,6 +10,7 @@ import AverageSalary from './components/AverageSalary'
 import MaleFemaleAge from './components/MaleFemaleAge'
 import StudentContainer from './components/StudentContainer'
 import Grid from '@material-ui/core/Grid'
+import EventContainer from "./components/EventContainer";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -48,6 +49,9 @@ class App extends Component {
                 <Grid container direction="column">
                   <Grid item style={{ backgroundColor: "#E94C4C" }}>
                     <AverageSalary />
+                  </Grid>
+                  <Grid item style={{ backgroundColor: "#FFFFFF" }}>
+                    <EventContainer />
                   </Grid>
                 </Grid>
               </Grid>

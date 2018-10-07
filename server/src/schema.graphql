@@ -3,6 +3,7 @@
 # import Funny from './generated/prisma.graphql'
 # import Company from './generated/prisma.graphql'
 # import CompanyOrderByInput from "./generated/prisma.graphql"
+# import EventsOrderByInput from "./generated/prisma.graphql"
 
 
 type Query {
@@ -17,6 +18,8 @@ type Query {
 
   student(id: String!): Student
   getAllStudents: [Student!]!
+
+  getAllEvents(skip: Int, first: Int, orderBy: EventsOrderByInput): [Events!]!
 }
 
 type Mutation {
