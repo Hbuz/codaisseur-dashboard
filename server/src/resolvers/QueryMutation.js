@@ -65,6 +65,13 @@ module.exports = {
         info,
       )
     },
+
+    getAllEvents: (_, args, context, info) => {
+      return context.prisma.query.eventses(
+        { skip: args.skip, first: args.first, orderBy: args.orderBy },
+        info,
+      )
+    },
   },
   Mutation: {
     addNationality: (_, args, context, info) => {
