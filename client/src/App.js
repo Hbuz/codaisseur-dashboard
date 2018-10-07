@@ -50,7 +50,7 @@ class App extends Component {
                   <Grid item style={{ backgroundColor: "#E94C4C" }}>
                     <AverageSalary />
                   </Grid>
-                  <Grid item style={{ backgroundColor: "#FFFFFF" }}>
+                  <Grid item style={{ backgroundColor: "#FFFFFF", marginTop: "5%" }}>
                     <EventContainer />
                   </Grid>
                 </Grid>
