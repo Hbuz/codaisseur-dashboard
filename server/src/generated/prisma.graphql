@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Fri Oct 05 2018 14:55:59 GMT+0200 (CEST)
+# timestamp: Sun Oct 07 2018 12:39:07 GMT+0200 (CEST)
 
 type AggregateCompany {
   count: Int!
@@ -23,6 +23,7 @@ type Company implements Node {
   name: String!
   city: String!
   numberOfStudents: Int
+  logo: String
 }
 
 """A connection to a list of items."""
@@ -39,6 +40,7 @@ input CompanyCreateInput {
   name: String!
   city: String!
   numberOfStudents: Int
+  logo: String
 }
 
 """An edge in a connection."""
@@ -59,6 +61,8 @@ enum CompanyOrderByInput {
   city_DESC
   numberOfStudents_ASC
   numberOfStudents_DESC
+  logo_ASC
+  logo_DESC
   updatedAt_ASC
   updatedAt_DESC
   createdAt_ASC
@@ -70,6 +74,7 @@ type CompanyPreviousValues {
   name: String!
   city: String!
   numberOfStudents: Int
+  logo: String
 }
 
 type CompanySubscriptionPayload {
@@ -115,6 +120,7 @@ input CompanyUpdateInput {
   name: String
   city: String
   numberOfStudents: Int
+  logo: String
 }
 
 input CompanyWhereInput {
@@ -268,6 +274,46 @@ input CompanyWhereInput {
 
   """All values greater than or equal the given value."""
   numberOfStudents_gte: Int
+  logo: String
+
+  """All values that are not equal to given value."""
+  logo_not: String
+
+  """All values that are contained in given list."""
+  logo_in: [String!]
+
+  """All values that are not contained in given list."""
+  logo_not_in: [String!]
+
+  """All values less than the given value."""
+  logo_lt: String
+
+  """All values less than or equal the given value."""
+  logo_lte: String
+
+  """All values greater than the given value."""
+  logo_gt: String
+
+  """All values greater than or equal the given value."""
+  logo_gte: String
+
+  """All values containing the given string."""
+  logo_contains: String
+
+  """All values not containing the given string."""
+  logo_not_contains: String
+
+  """All values starting with the given string."""
+  logo_starts_with: String
+
+  """All values not starting with the given string."""
+  logo_not_starts_with: String
+
+  """All values ending with the given string."""
+  logo_ends_with: String
+
+  """All values not ending with the given string."""
+  logo_not_ends_with: String
 }
 
 input CompanyWhereUniqueInput {

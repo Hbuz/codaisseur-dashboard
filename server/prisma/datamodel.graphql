@@ -15,4 +15,5 @@ type Company {
   name: String! @unique
   city: String!
   numberOfStudents: Int
+  logo: String
 }
