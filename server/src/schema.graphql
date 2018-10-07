@@ -14,6 +14,9 @@ type Query {
 
   company(name: String!): Company
   getAllCompanies(skip: Int, first: Int, orderBy: CompanyOrderByInput): [Company!]!
+
+  student(id: Int!): Student
+  getAllCompanies: [Company!]!
 }
 
 type Mutation {

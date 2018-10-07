@@ -17,3 +17,38 @@ type Company {
   numberOfStudents: Int
   logo: String
 }
+
+type Student {
+  id: ID! @unique
+  name: String!
+  pic: String
+  age: Int
+  gender: String
+  city: String
+  description: String
+  graduationDate: String
+  skills: [String!]
+  status: String
+}
+
+# type Skill {
+#   id: ID! @unique
+#   name: String
+#   student: [Student]
+# }
+
+type Events {
+  id: ID! @unique
+  name: String!
+  logoType: String 
+  date: String
+  description: String
+  where: String
+}
+
+type Course {
+  id: ID! @unique
+  date: String
+  type: String
+  participants: Int
+}
