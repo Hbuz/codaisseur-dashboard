@@ -31,6 +31,7 @@ type Student {
   status: String
 }
 
+
 # type Skill {
 #   id: ID! @unique
 #   name: String
