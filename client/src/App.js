@@ -8,6 +8,7 @@ import TopBar from "./components/layout/TopBar"
 import NationalitiesContainer from './components/NationalitiesContainer'
 import AverageSalary from './components/AverageSalary'
 import MaleFemaleAge from './components/MaleFemaleAge'
+import StudentContainer from './components/StudentContainer'
 import Grid from '@material-ui/core/Grid'
 
 const client = new ApolloClient({
@@ -24,35 +25,38 @@ class App extends Component {
           {/* <nav>
             <TopBar class='header page__header' />
           </nav> */}
-          <main style={{ marginTop: 75 }}>
-            <Grid container direction="row" justify="space-evenly" alignItems="flex-start">
-              <Grid item>
+          <main style={{ marginTop: "2%", marginLeft: "5%", marginRight: "5%", marginBottom: "2%" }}>
+            <Grid container direction="row" justify="center" spacing={16}>
+              <Grid item xs={3}>
                 <Grid container direction="column">
                   <Grid item>
-                  <TopBar/>
+                    <TopBar />
                   </Grid>
-                  <Grid item style={{backgroundColor:"#E94C4C"}}>
+                  <Grid item style={{ backgroundColor: "#E94C4C" }}>
                     <FunnyContainer />
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item>
-                <Grid container>
-                  <Grid item style={{backgroundColor:"#FFFFFF"}}>
+              <Grid item xs={3}>
+                <Grid container direction="column">
+                  <Grid item style={{ backgroundColor: "#FFFFFF" }}>
                     <NationalitiesContainer />
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item>
-                <Grid container>
-                  <Grid item style={{backgroundColor:"#E94C4C"}}>
+              <Grid item xs={3}>
+                <Grid container direction="column">
+                  <Grid item style={{ backgroundColor: "#E94C4C" }}>
                     <AverageSalary />
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item>
-                <Grid container>
-                  <Grid item style={{backgroundColor:"#FFFFFF"}}>
+              <Grid item xs={3}>
+                <Grid container direction="column" >
+                  <Grid item style={{ backgroundColor: "#FFFFFF" }}>
+                    <StudentContainer />
+                  </Grid>
+                  <Grid item style={{ backgroundColor: "#E94C4C", marginTop: "5%" }}>
                     <MaleFemaleAge />
                   </Grid>
                 </Grid>

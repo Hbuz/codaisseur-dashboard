@@ -47,6 +47,22 @@ module.exports = {
         info,
       )
     },
+    
+    getAllStudents: (_, args, context, info) => {
+      return context.prisma.query.students(
+        info,
+      )
+    },
+    student: (_, args, context, info) => {
+      return context.prisma.query.student(
+        {
+          where: {
+            id: args.id,
+          },
+        },
+        info,
+      )
+    },
   },
   Mutation: {
     addNationality: (_, args, context, info) => {

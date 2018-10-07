@@ -52,4 +52,13 @@ mutation {
   ns:createCompany(data: {name: "Nederlandse Spoorwegen", city: "Amsterdam", numberOfStudents: 1}){id}
   greenHome:createCompany(data: {name: "Green Home", city: "Amsterdam", numberOfStudents: 4}){id}
   rabobank: createCompany(data: {name: "Rabobank", city: "Utrecht", numberOfStudents: 2}){id}
+
+  s1: createStudent(data: {name: "Sandro Sandri", age:32, gender:"M", city:"Amsterdam", description:"I'am a full stack developer!", 
+    graduationDate:"August 2018", status:"hired"}){id}
+  s2: createStudent(data: {name: "Mario Rossi", age:22, gender:"M", city:"Utrecht", description:"Wooooooooooooooooo", 
+    graduationDate:"August 2018", skills: {set: ["back end"]}, status:"hired"}){id}
+  s3: createStudent(data: {name: "Paola Paoli", age:36, gender:"F",city:"Amsterdam", description:"That was amazing!", 
+    graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
+  s4: createStudent(data: {name: "John Smith", age:26, gender:"M",city:"Rotterdam", description:"bla bla bla bla", 
+    graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
 }
