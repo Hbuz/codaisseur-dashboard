@@ -16,8 +16,7 @@
 }
 
 .btn_logo_logo-size img{
-    height: 7vh;
-    width: 7vw;
-    padding-top: 4%;
-    padding-left: 4%;
+    max-width: 85%;
+    max-height: 85%;
+    padding: 5%;
 }

@@ -17,7 +17,6 @@ class Nationalities extends React.PureComponent {
       const country = data
       this.setState({
         flag: country.flag})
-      console.log(this.state)
     })
   }
 

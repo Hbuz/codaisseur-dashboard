@@ -1,0 +1,19 @@
+.btn_companies-total h1{
+    font-size: 40px;
+    text-align: center;
+}
+
+.btn_companies-different-text {
+    font-size: 85%;
+    text-align: center;
+}
+
+.btn_companies-stock-image {
+    max-width: 85%;
+    max-height: 85%;
+    padding: 3%;
+}
+
+.btn_companies-total-container {
+    height: 35vh;
+}
