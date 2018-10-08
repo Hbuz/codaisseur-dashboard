@@ -8,6 +8,7 @@ import TopBar from "./components/layout/TopBar"
 import NationalitiesContainer from './components/NationalitiesContainer'
 import AverageSalary from './components/AverageSalary'
 import MaleFemaleAge from './components/MaleFemaleAge'
+import CompaniesContainer from './components/CompaniesContainer'
 import StudentContainer from './components/StudentContainer'
 import Grid from '@material-ui/core/Grid'
 import EventContainer from "./components/EventContainer";
@@ -25,6 +26,13 @@ class App extends Component {
         <div>
           {/* <nav>
             <TopBar class='header page__header' />
+          </nav>
+          <main style={{ marginTop: 75 }}>
+            <CompaniesContainer />
+            <Route exact path="/" component={FunnyContainer} />
+            <NationalitiesContainer />
+            <AverageSalary />
+            <MaleFemaleAge />
           </nav> */}
           <main style={{ marginTop: "2%", marginLeft: "5%", marginRight: "5%", marginBottom: "2%" }}>
             <Grid container direction="row" justify="center" spacing={16}>
@@ -33,8 +41,11 @@ class App extends Component {
                   <Grid item>
                     <TopBar />
                   </Grid>
-                  <Grid item style={{ backgroundColor: "#E94C4C" }}>
+                  {/* <Grid item style={{ backgroundColor: "#E94C4C" }}>
                     <FunnyContainer />
+                  </Grid > */}
+                  <Grid item style={{ backgroundColor: "#E94C4C" }}>
+                    <CompaniesContainer />
                   </Grid>
                 </Grid>
               </Grid>
