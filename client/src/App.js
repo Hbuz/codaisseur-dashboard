@@ -37,7 +37,7 @@ class App extends Component {
             <AverageSalary />
             <MaleFemaleAge />
           </nav> */}
-          <main style={{ marginTop: "2%", marginLeft: "5%", marginRight: "5%", marginBottom: "2%" }}>
+          <main style={{ marginTop: "1%", marginLeft: "5%", marginRight: "5%", marginBottom: "1%" }}>
             <Grid container direction="row" justify="center" spacing={16}>
               <Grid item xs={3}>
                 <Grid container direction="column">
