@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Sun Oct 07 2018 13:55:22 GMT+0200 (CEST)
+# timestamp: Mon Oct 08 2018 14:22:22 GMT+0200 (CEST)
 
 type AggregateCompany {
   count: Int!
@@ -337,7 +337,8 @@ type Course implements Node {
   id: ID!
   date: String
   type: String
-  participants: Int
+  maleParticipants: Int
+  femaleParticipants: Int
 }
 
 """A connection to a list of items."""
@@ -353,7 +354,8 @@ type CourseConnection {
 input CourseCreateInput {
   date: String
   type: String
-  participants: Int
+  maleParticipants: Int
+  femaleParticipants: Int
 }
 
 """An edge in a connection."""
@@ -372,8 +374,10 @@ enum CourseOrderByInput {
   date_DESC
   type_ASC
   type_DESC
-  participants_ASC
-  participants_DESC
+  maleParticipants_ASC
+  maleParticipants_DESC
+  femaleParticipants_ASC
+  femaleParticipants_DESC
   updatedAt_ASC
   updatedAt_DESC
   createdAt_ASC
@@ -384,7 +388,8 @@ type CoursePreviousValues {
   id: ID!
   date: String
   type: String
-  participants: Int
+  maleParticipants: Int
+  femaleParticipants: Int
 }
 
 type CourseSubscriptionPayload {
@@ -429,7 +434,8 @@ input CourseSubscriptionWhereInput {
 input CourseUpdateInput {
   date: String
   type: String
-  participants: Int
+  maleParticipants: Int
+  femaleParticipants: Int
 }
 
 input CourseWhereInput {
@@ -561,28 +567,50 @@ input CourseWhereInput {
 
   """All values not ending with the given string."""
   type_not_ends_with: String
-  participants: Int
+  maleParticipants: Int
 
   """All values that are not equal to given value."""
-  participants_not: Int
+  maleParticipants_not: Int
 
   """All values that are contained in given list."""
-  participants_in: [Int!]
+  maleParticipants_in: [Int!]
 
   """All values that are not contained in given list."""
-  participants_not_in: [Int!]
+  maleParticipants_not_in: [Int!]
 
   """All values less than the given value."""
-  participants_lt: Int
+  maleParticipants_lt: Int
 
   """All values less than or equal the given value."""
-  participants_lte: Int
+  maleParticipants_lte: Int
 
   """All values greater than the given value."""
-  participants_gt: Int
+  maleParticipants_gt: Int
 
   """All values greater than or equal the given value."""
-  participants_gte: Int
+  maleParticipants_gte: Int
+  femaleParticipants: Int
+
+  """All values that are not equal to given value."""
+  femaleParticipants_not: Int
+
+  """All values that are contained in given list."""
+  femaleParticipants_in: [Int!]
+
+  """All values that are not contained in given list."""
+  femaleParticipants_not_in: [Int!]
+
+  """All values less than the given value."""
+  femaleParticipants_lt: Int
+
+  """All values less than or equal the given value."""
+  femaleParticipants_lte: Int
+
+  """All values greater than the given value."""
+  femaleParticipants_gt: Int
+
+  """All values greater than or equal the given value."""
+  femaleParticipants_gte: Int
 }
 
 input CourseWhereUniqueInput {
