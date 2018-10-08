@@ -8,6 +8,7 @@ import TopBar  from "./components/layout/TopBar"
 import NationalitiesContainer from './components/NationalitiesContainer'
 import AverageSalary from './components/AverageSalary'
 import MaleFemaleAge from './components/MaleFemaleAge'
+import CompaniesContainer from './components/CompaniesContainer'
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -24,6 +25,7 @@ class App extends Component {
             <TopBar class='header page__header' />
           </nav>
           <main style={{ marginTop: 75 }}>
+            <CompaniesContainer />
             <Route exact path="/" component={FunnyContainer} />
             <NationalitiesContainer />
             <AverageSalary />
