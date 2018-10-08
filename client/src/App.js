@@ -69,7 +69,7 @@ class App extends Component {
               <Grid item xs={3}>
                 <Grid container direction="column" >
                   <Grid item style={{ backgroundColor: "#FFFFFF" }}>
-                    <StudentContainer />
+                    <StudentContainer client={client} />
                   </Grid>
                   <Grid item style={{ backgroundColor: "#E94C4C", marginTop: "5%" }}>
                     <MaleFemaleAge />
