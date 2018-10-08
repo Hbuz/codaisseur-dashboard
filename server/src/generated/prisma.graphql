@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Mon Oct 08 2018 14:22:22 GMT+0200 (CEST)
+# timestamp: Mon Oct 08 2018 16:43:25 GMT+0200 (CEST)
 
 type AggregateCompany {
   count: Int!
@@ -35,7 +35,7 @@ type Company implements Node {
   name: String!
   city: String!
   numberOfStudents: Int
-  logo: String
+  domain: String
 }
 
 """A connection to a list of items."""
@@ -52,7 +52,7 @@ input CompanyCreateInput {
   name: String!
   city: String!
   numberOfStudents: Int
-  logo: String
+  domain: String
 }
 
 """An edge in a connection."""
@@ -73,8 +73,8 @@ enum CompanyOrderByInput {
   city_DESC
   numberOfStudents_ASC
   numberOfStudents_DESC
-  logo_ASC
-  logo_DESC
+  domain_ASC
+  domain_DESC
   updatedAt_ASC
   updatedAt_DESC
   createdAt_ASC
@@ -86,7 +86,7 @@ type CompanyPreviousValues {
   name: String!
   city: String!
   numberOfStudents: Int
-  logo: String
+  domain: String
 }
 
 type CompanySubscriptionPayload {
@@ -132,7 +132,7 @@ input CompanyUpdateInput {
   name: String
   city: String
   numberOfStudents: Int
-  logo: String
+  domain: String
 }
 
 input CompanyWhereInput {
@@ -286,46 +286,46 @@ input CompanyWhereInput {
 
   """All values greater than or equal the given value."""
   numberOfStudents_gte: Int
-  logo: String
+  domain: String
 
   """All values that are not equal to given value."""
-  logo_not: String
+  domain_not: String
 
   """All values that are contained in given list."""
-  logo_in: [String!]
+  domain_in: [String!]
 
   """All values that are not contained in given list."""
-  logo_not_in: [String!]
+  domain_not_in: [String!]
 
   """All values less than the given value."""
-  logo_lt: String
+  domain_lt: String
 
   """All values less than or equal the given value."""
-  logo_lte: String
+  domain_lte: String
 
   """All values greater than the given value."""
-  logo_gt: String
+  domain_gt: String
 
   """All values greater than or equal the given value."""
-  logo_gte: String
+  domain_gte: String
 
   """All values containing the given string."""
-  logo_contains: String
+  domain_contains: String
 
   """All values not containing the given string."""
-  logo_not_contains: String
+  domain_not_contains: String
 
   """All values starting with the given string."""
-  logo_starts_with: String
+  domain_starts_with: String
 
   """All values not starting with the given string."""
-  logo_not_starts_with: String
+  domain_not_starts_with: String
 
   """All values ending with the given string."""
-  logo_ends_with: String
+  domain_ends_with: String
 
   """All values not ending with the given string."""
-  logo_not_ends_with: String
+  domain_not_ends_with: String
 }
 
 input CompanyWhereUniqueInput {
