@@ -5,6 +5,15 @@
 
 .nationalities-container-whole {
   height: 33vh;
+}
+
+.btn-nationalities-message {
+  height: 5vh;
+  background-color: #ffff;
+}
+
+.btn-nationalities-flags {
+  height: 28vh;
   background-color: #D32F2F;
 }
 
