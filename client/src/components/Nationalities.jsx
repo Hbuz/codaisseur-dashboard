@@ -10,7 +10,7 @@ class Nationalities extends React.PureComponent {
     this.state = {}
   }
   
-  getFlags = (api, countryCode) => {
+  getFlags = (api, countryCode) => { // From https://restcountries.eu/
     fetch(api + countryCode)
     .then(response => response.json())
     .then(data => {

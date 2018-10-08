@@ -13,6 +13,7 @@ class CompaniesContainer extends React.PureComponent {
         {
          getAllCompanies{
              name
+             domain
          }
       }`}
     >
