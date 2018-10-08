@@ -8,13 +8,10 @@ import TopBar from "./components/layout/TopBar"
 import NationalitiesContainer from './components/NationalitiesContainer'
 import AverageSalary from './components/AverageSalary'
 import MaleFemaleAge from './components/MaleFemaleAge'
-<<<<<<< HEAD
 import CompaniesContainer from './components/CompaniesContainer'
-=======
 import StudentContainer from './components/StudentContainer'
 import Grid from '@material-ui/core/Grid'
 import EventContainer from "./components/EventContainer";
->>>>>>> 95a21b3aba11096b0ab31e781daa8a7082e39c57
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -29,7 +26,6 @@ class App extends Component {
         <div>
           {/* <nav>
             <TopBar class='header page__header' />
-<<<<<<< HEAD
           </nav>
           <main style={{ marginTop: 75 }}>
             <CompaniesContainer />
@@ -37,7 +33,6 @@ class App extends Component {
             <NationalitiesContainer />
             <AverageSalary />
             <MaleFemaleAge />
-=======
           </nav> */}
           <main style={{ marginTop: "2%", marginLeft: "5%", marginRight: "5%", marginBottom: "2%" }}>
             <Grid container direction="row" justify="center" spacing={16}>
@@ -48,6 +43,9 @@ class App extends Component {
                   </Grid>
                   <Grid item style={{ backgroundColor: "#E94C4C" }}>
                     <FunnyContainer />
+                  </Grid >
+                  <Grid item style={{ backgroundColor: "#E94C4C" }}>
+                    <CompaniesContainer />
                   </Grid>
                 </Grid>
               </Grid>
@@ -79,7 +77,6 @@ class App extends Component {
                 </Grid>
               </Grid>
             </Grid>
->>>>>>> 95a21b3aba11096b0ab31e781daa8a7082e39c57
           </main>
           <footer>
             {/* <Footer /> */}

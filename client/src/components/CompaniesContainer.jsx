@@ -20,12 +20,14 @@ class CompaniesContainer extends React.PureComponent {
         if (error) return <p>Error :(</p>;
 
         return (
+          <div>
           <CompaniesTotal companies={data.getAllCompanies.length} />
-          data.getAllCompanies.map((company) => (
+          {data.getAllCompanies.map((company) => (
           <div key={company.name}>
             <CompaniesOverview company={company} />
+          </div>))}
           </div>
-        )));
+        );
       }}
 
     </Query>
