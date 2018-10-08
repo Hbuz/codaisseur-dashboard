@@ -41,7 +41,7 @@ class App extends Component {
           <main style={{ marginTop: "1%", marginLeft: "5%", marginRight: "5%", marginBottom: "1%" }}>
             <Grid container direction="row" justify="center" spacing={16}>
               <Grid item xs={3}>
-                <Grid container direction="column">
+                <Grid container direction="column" className="btn-main-grid-column">
                   <Grid item>
                     <TopBar />
                   </Grid>
@@ -54,7 +54,7 @@ class App extends Component {
                 </Grid>
               </Grid>
               <Grid item xs={3}>
-                <Grid container direction="column">
+                <Grid container direction="column" className="btn-main-grid-column">
                   <Grid item>
                     <Graduated />
                   </Grid>
@@ -70,7 +70,7 @@ class App extends Component {
                 </Grid>
               </Grid>
               <Grid item xs={3}>
-                <Grid container direction="column">
+                <Grid container direction="column" className="btn-main-grid-column">
                   <Grid item>
                     <AverageSalary />
                   </Grid>
@@ -80,7 +80,7 @@ class App extends Component {
                 </Grid>
               </Grid>
               <Grid item xs={3}>
-                <Grid container direction="column" >
+                <Grid container direction="column" className="btn-main-grid-column">
                   <Grid item style={{ backgroundColor: "#FFFFFF" }}>
                     <StudentContainer client={client} />
                   </Grid>
