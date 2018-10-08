@@ -1,9 +1,9 @@
 import * as React from 'react'
 import '../styles/nationalities.css'
 
-export default function MaleFemaleAge() {
+export default function FirstJob() {
   return (
-  <div className="maleFemale-div">
+  <div className="first-job-div">
   </div>
   )
 }

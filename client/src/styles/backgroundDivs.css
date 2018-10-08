@@ -1,0 +1,23 @@
+.maleFemale-div {
+    height: 17.5vh;
+    background-image: url('../assets/backgroundDivs/Frame 3.png');
+    background-size: 100% 100%;
+}
+
+.graduated-div {
+    height: 17.5vh;
+    background-image: url('../assets/backgroundDivs/Frame 2 (7).png');
+    background-size: 100% 100%;
+}
+
+.first-job-div {
+    height: 17.5vh;
+    background-image: url('../assets/backgroundDivs/Frame 4.png');
+    background-size: 100% 100%;
+}
+
+.averageSalary-div {
+    height: 42vh;
+    background-image: url('../assets/backgroundDivs/Frame 5.png');
+    background-size: 100% 100%;
+}
