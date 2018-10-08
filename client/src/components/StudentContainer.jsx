@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Student from './Student'
 import gql from "graphql-tag";
-
+import '../styles/studentContainer.css'
 
 class StudentContainer extends React.PureComponent {
 
@@ -39,7 +39,9 @@ class StudentContainer extends React.PureComponent {
 
   render() {
     return (
-      <Student student={this.state.currentStudent} />
+      <div className="btn-student-container">
+        <Student student={this.state.currentStudent} />
+      </div>
     )
   }
 }

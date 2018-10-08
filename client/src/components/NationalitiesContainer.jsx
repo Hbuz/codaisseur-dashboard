@@ -6,7 +6,9 @@ import { Query } from "react-apollo";
 class NationalitiesContainer extends React.PureComponent {
 
   render() {
-    return <Query
+    return (
+    <div className="nationalities-container-whole">
+    <Query
       query={gql`
         {
          getAllNationalities(
@@ -29,7 +31,8 @@ class NationalitiesContainer extends React.PureComponent {
       }}
 
     </Query>
-  }
+    </div>
+  )}
 }
 
 

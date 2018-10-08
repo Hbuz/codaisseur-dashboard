@@ -3,11 +3,13 @@ import Event from './Event'
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import Grid from '@material-ui/core/Grid'
+import '../styles/events.css'
 
 class EventContainer extends React.PureComponent {
 
   render() {
     return (
+      <div className="btn-events-container">
       <Grid container direction="column" alignItems="center">
         <Grid item>
         <h2>Incoming Events</h2>
@@ -45,7 +47,8 @@ class EventContainer extends React.PureComponent {
 
           </Query>
         </Grid>
-      </Grid>)
+      </Grid>
+      </div>)
   }
 }
 

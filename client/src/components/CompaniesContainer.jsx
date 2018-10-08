@@ -1,8 +1,9 @@
 import * as React from 'react'
-import CompaniesDetail from './CompaniesDetail'
+import CompaniesTotal from './CompaniesTotal'
 import CompaniesOverview from './CompaniesOverview'
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
+import '../styles/companies.css'
 
 class CompaniesContainer extends React.PureComponent {
 
@@ -10,19 +11,26 @@ class CompaniesContainer extends React.PureComponent {
     return <Query
       query={gql`
         {
-         getAllCompanies(
-            )
+         getAllCompanies{
+             name
+         }
       }`}
     >
       {({ loading, error, data }) => {
         if (loading) return <p>Loading...</p>;
         if (error) return <p>Error :(</p>;
 
-        return data.getAllCompanies.map((company) => (
-          <div key={company.item}>
-            <CompaniesOverview company={company} />
+        return (
+          <div>
+          <CompaniesTotal companies={data.getAllCompanies.length} />
+          <div className="btn_companies-list-container">
+            {data.getAllCompanies.map((company) => (
+            <div key={company.name}>
+              <CompaniesOverview company={company} />
+            </div>))}
           </div>
-        ));
+          </div>
+        );
       }}
 
     </Query>
