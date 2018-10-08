@@ -41,9 +41,9 @@ class App extends Component {
                   <Grid item>
                     <TopBar />
                   </Grid>
-                  <Grid item style={{ backgroundColor: "#E94C4C" }}>
+                  {/* <Grid item style={{ backgroundColor: "#E94C4C" }}>
                     <FunnyContainer />
-                  </Grid >
+                  </Grid > */}
                   <Grid item style={{ backgroundColor: "#E94C4C" }}>
                     <CompaniesContainer />
                   </Grid>
