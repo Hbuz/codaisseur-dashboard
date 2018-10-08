@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid'
 
 export default function Student({ student }) {
   return (<div>
-    {console.log("PROPROPRO: " + JSON.stringify(student))}
+    {/* {console.log("PROPROPRO: " + JSON.stringify(student))} */}
 
     <Grid container direction="column" alignItems="center">
       <Grid item>

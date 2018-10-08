@@ -51,5 +51,6 @@ type Course {
   id: ID! @unique
   date: String
   type: String
-  participants: Int
+  maleParticipants: Int
+  femaleParticipants: Int
 }

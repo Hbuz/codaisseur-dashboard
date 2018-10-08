@@ -12,6 +12,7 @@ import CompaniesContainer from './components/CompaniesContainer'
 import StudentContainer from './components/StudentContainer'
 import Grid from '@material-ui/core/Grid'
 import EventContainer from "./components/EventContainer";
+import NextCourseContainer from "./components/NextCourseContainer";
 import Footer from './components/layout/Footer'
 import Graduated from './components/Graduated'
 import FirstJob from './components/FirstJob'
@@ -82,6 +83,9 @@ class App extends Component {
                 <Grid container direction="column" >
                   <Grid item style={{ backgroundColor: "#FFFFFF" }}>
                     <StudentContainer client={client} />
+                  </Grid>
+                  <Grid item style={{ backgroundColor: "#E94C4C", marginTop: "5%"  }}>
+                    <NextCourseContainer />
                   </Grid>
                 </Grid>
               </Grid>
