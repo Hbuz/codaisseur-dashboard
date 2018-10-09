@@ -3,14 +3,26 @@ import NextCourse from './NextCourse'
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 
-class NextCourseContainer extends React.PureComponent {
 
+class NextCourseContainer extends React.PureComponent {
+  
   render() {
+
+    const dateNow = Math.floor(Date.now()/1000)
+
     return (
     <Query
       query={gql`
+      query Events($dateNow: Int!)
         {
-          getAllCourses {
+          getAllCourses 
+          (
+            where: {date_gt: $dateNow}
+            first: 2
+            skip: 0
+            orderBy: date_ASC
+            )
+          {
             date
             type
             maleParticipants
@@ -18,16 +30,19 @@ class NextCourseContainer extends React.PureComponent {
           }
         }
         `}
+         variables={{ dateNow }}
     >
       {({ loading, error, data }) => {
         if (loading) return <p>Loading...</p>;
         if (error) return <p>Error :(</p>;
         // console.log("RESULT NEXT COURSE: " + JSON.stringify(data));
-
-
+        const courseFetched = data.getAllCourses
+        if(courseFetched[0].date !== courseFetched[1].date){
+          courseFetched.pop()
+        }
         return (
           <div>
-            <NextCourse nextCourses={data.getAllCourses} />
+            <NextCourse nextCourses={courseFetched} />
           </div>
         )
       }

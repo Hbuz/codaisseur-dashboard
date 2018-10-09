@@ -73,6 +73,7 @@ module.exports = {
 
     getAllCourses: (_, args, context, info) => {
       return context.prisma.query.courses(
+        { where: args.where, skip: args.skip, first: args.first, orderBy: args.orderBy },
         info,
       )
     },
