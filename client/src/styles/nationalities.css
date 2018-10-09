@@ -1,19 +1,38 @@
 .btn_nationalities-flags img{
-  height: 30px;
-  width: 40px;
+  height: 15%;
+  width: 20%;
 }
 
 .nationalities-container-whole {
   height: 33vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #D32F2F
 }
 
 .btn-nationalities-message {
-  height: 5vh;
+  /* max-height: 5vh; */
   background-color: #ffff;
 }
 
 .btn-nationalities-flags {
   height: 28vh;
   background-color: #D32F2F;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* box-sizing: border-box; */
+}
+
+.btn-nationalities-message {
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 85%;
+  text-align: center;
+}
+
+.btn_nationalities-flags {
+  max-height: 20%;
+  flex-grow: 1;
 }
 
