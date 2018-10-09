@@ -162,6 +162,8 @@ N103: createNationality(data: {nationality:"UZ",count:1}) {id}
     graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
   s4: createStudent(data: {name: "John Smith", age:26, gender:"M",city:"Rotterdam", description:"bla bla bla bla", 
     graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
+  s5: createStudent(data: {name: "Michael Rodriguez", age:29, gender:"M",city:"Leiden", description:"I like computers", 
+    graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"Ready to work for you!"}){id}
 
 
     e1: createEvents(data: {name: "MeetUP", date: "10-08-2018 10:00", description:"", where:"Codaisseur Building"}) {id}
