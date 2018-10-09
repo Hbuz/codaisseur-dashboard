@@ -4,9 +4,9 @@ import Typography from '@material-ui/core/Typography'
 
 export default function NextCourse({ nextCourses }) {
 
-  console.log("NEXT COIRUUESUE: " + JSON.stringify(nextCourses))
+  // console.log("NEXT COIRUUESUE: " + JSON.stringify(nextCourses))
   const date = nextCourses[0].date.split(" ")
-  console.log("DATE: " + date)
+  // console.log("DATE: " + date)
 
   return (
     <div>

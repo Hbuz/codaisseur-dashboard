@@ -6,7 +6,6 @@ const API = 'https://restcountries.eu/rest/v2/alpha/';
 class Nationalities extends React.PureComponent {
   constructor(props) {
     super(props)
-
     this.state = {}
   }
   
@@ -21,13 +20,16 @@ class Nationalities extends React.PureComponent {
     })
   }
 
-  componentDidMount() {
-    this.getFlags(API, this.props.nationality.nationality)
-  }
+  // componentDidMount() {
+  //   console.log("SINGLE NATIONALITY: "+JSON.stringify(this.props.nationality))
+  //   this.getFlags(API, this.props.nationality.nationality)
+  // }
 
   render() {
+    this.getFlags(API, this.props.nationality.nationality)
     return (<div>
       <div className="btn_nationalities-flags">
+      {/* {console.log("FLAGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG: "+JSON.stringify(this.props))} */}
         <span><img src={this.state.flag} alt={`${this.state.name} flag`} />
        {this.state.name}</span>
       </div>
