@@ -50,9 +50,9 @@ class NationalitiesContainer extends React.PureComponent {
 
   render() {
     return (
-      <div>
+      <div className="btn-nationalities-flags">
         {this.state.currentNationalities.map((nationality) =>
-          <div key={nationality.id}>
+          <div key={nationality.id} className="btn_nationalities-flags">
             <Nationalities nationality={nationality} />
           </div>
         )}
