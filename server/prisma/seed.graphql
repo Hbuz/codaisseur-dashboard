@@ -162,6 +162,8 @@ N103: createNationality(data: {nationality:"UZ",count:1}) {id}
     graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
   s4: createStudent(data: {name: "John Smith", age:26, gender:"M",city:"Rotterdam", description:"bla bla bla bla", 
     graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
+  s5: createStudent(data: {name: "Michael Rodriguez", age:29, gender:"M",city:"Leiden", description:"I like computers", 
+    graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"Ready to work for you!"}){id}
 
 
     
@@ -175,7 +177,7 @@ N103: createNationality(data: {nationality:"UZ",count:1}) {id}
 
 
     c1: createCourse(data: {date: "October 12", type: "Code", maleParticipants:12 , femaleParticipants:8}){id}
-    c2: createCourse(data: {date: "October 12", type: "Design", maleParticipants:1 , femaleParticipants:2}){id}
+    c2: createCourse(data: {date: "October 12", type: "UI/UX Design", maleParticipants:1 , femaleParticipants:2}){id}
     c3: createCourse(data: {date: "December 20", type: "Code", maleParticipants:1 , femaleParticipants:0}){id}
 
 }

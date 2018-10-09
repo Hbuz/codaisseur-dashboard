@@ -7237,6 +7237,10 @@ react-scripts@2.0.4:
   optionalDependencies:
     fsevents "1.2.4"
 
+react-sticky-footer@^0.1.0-rc3:
+  version "0.1.0-rc3"
+  resolved "https://registry.yarnpkg.com/react-sticky-footer/-/react-sticky-footer-0.1.0-rc3.tgz#47137e332cafcf49a48561894aa410cca683b3af"
+
 react-transition-group@^2.2.1:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.5.0.tgz#70bca0e3546102c4dc5cf3f5f57f73447cce6874"

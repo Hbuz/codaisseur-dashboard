@@ -1,6 +1,9 @@
 .btn_nationalities-flags img{
   height: 15%;
   width: 20%;
+  max-width: 20%;
+  max-height: 15%;
+  box-sizing: border-box;
 }
 
 .nationalities-container-whole {
@@ -29,10 +32,14 @@
   overflow: hidden;
   font-size: 85%;
   text-align: center;
+  color: #E94C4C;
+  font-weight: 800;
 }
 
 .btn_nationalities-flags {
   max-height: 20%;
   flex-grow: 1;
+  color: white;
+  padding-left: 3%;
 }
 
