@@ -1,9 +1,14 @@
 import * as React from 'react'
 import Grid from '@material-ui/core/Grid'
+import hired from '../assets/students/Hired Stamp.png'
 
 export default function Student({ student }) {
   return (<div>
-
+    {student && student.status === 'hired' &&
+      <div className="hired-conditional-render">
+        <img src={hired} alt=''/>
+      </div>
+    }
     <Grid container direction="column" alignItems="center"   >
       <Grid item>
         {student && student.gender === "M" &&
@@ -24,8 +29,6 @@ export default function Student({ student }) {
       </Grid>
     </Grid>
 
-
-    
     {/* <div alignItem="center">
       {student && student.gender === "M" &&
         <img style={{height: "85%", width: "85%"}} src="https://cdn1.iconfinder.com/data/icons/data-science-1-1/512/20-512.png" />
