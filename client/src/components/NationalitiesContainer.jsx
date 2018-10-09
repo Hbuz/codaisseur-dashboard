@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Nationalities from './Nationalities'
 import gql from "graphql-tag";
-import { Query } from "react-apollo";
 
 
 class NationalitiesContainer extends React.PureComponent {
@@ -56,7 +55,7 @@ class NationalitiesContainer extends React.PureComponent {
         </div>
         <div className="btn-nationalities-flags">
           {this.state.currentNationalities.map((nationality) =>
-            <div key={nationality.id} className="btn_nationalities-flags">
+            <div key={nationality.nationality} className="btn_nationalities-flags">
               <Nationalities nationality={nationality} />
             </div>
           )}

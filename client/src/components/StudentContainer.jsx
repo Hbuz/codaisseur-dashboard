@@ -28,11 +28,13 @@ class StudentContainer extends React.PureComponent {
 
 
     setInterval(() => {
-      if (this.state.counter === this.state.students.length) {
+      let counter = this.state.counter
+      if (counter === this.state.students.length) {
+        counter = 0
         this.setState({ counter: 0 })
       }
-      this.setState({ currentStudent: this.state.students[this.state.counter] })
-      this.setState({ counter: ++this.state.counter })
+      this.setState({ currentStudent: this.state.students[counter] })
+      this.setState({ counter: ++counter })
     }, 3000)
   }
 
