@@ -48,10 +48,10 @@ mutation {
   }
 
 
-  ing:createCompany(data: {name: "ING direct", city: "Amsterdam", numberOfStudents: 5}){id}
-  ns:createCompany(data: {name: "Nederlandse Spoorwegen", city: "Amsterdam", numberOfStudents: 1}){id}
-  greenHome:createCompany(data: {name: "Green Home", city: "Amsterdam", numberOfStudents: 4}){id}
-  rabobank: createCompany(data: {name: "Rabobank", city: "Utrecht", numberOfStudents: 2}){id}
+  ing:createCompany(data: {name: "ING direct", city: "Amsterdam", numberOfStudents: 5, domain: "ing.nl"}){id}
+  ns:createCompany(data: {name: "Nederlandse Spoorwegen", city: "Amsterdam", numberOfStudents: 1, domain: "ns.nl"}){id}
+  greenHome:createCompany(data: {name: "Green Home", city: "Amsterdam", numberOfStudents: 4, domain: "greenhome.nl"}){id}
+  rabobank: createCompany(data: {name: "Rabobank", city: "Utrecht", numberOfStudents: 2, domain: "rabobank.nl"}){id}
 
   s1: createStudent(data: {name: "Sandro Sandri", age:32, gender:"M", city:"Amsterdam", description:"I'am a full stack developer!", 
     graduationDate:"August 2018", status:"hired"}){id}
@@ -69,5 +69,9 @@ mutation {
     e4: createEvents(data: {name: "Start academy", date: "10-12-2018 09:30", description:"", where:"Codaisseur Building"}) {id}
     e5: createEvents(data: {name: "Bootcamp", date: "10-12-2018 09:30", description:"", where:"Codaisseur Building"}) {id}
     e6: createEvents(data: {name: "Conference", date: "10-26-2018 09:00", description:"", where:"Codaisseur Building"}) {id}
+
+    c1: createCourse(data: {date: "October 12", type: "Code", maleParticipants:12 , femaleParticipants:8}){id}
+    c2: createCourse(data: {date: "October 12", type: "Design", maleParticipants:1 , femaleParticipants:2}){id}
+    c3: createCourse(data: {date: "December 20", type: "Code", maleParticipants:1 , femaleParticipants:0}){id}
 
 }

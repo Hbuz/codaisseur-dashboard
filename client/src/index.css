@@ -8,6 +8,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(./assets/bdf308de717706bd538c35d98a452c31.png);
   background-size: cover;
+  max-height: 100vh;
+}
+
+main {
+  max-height: 90vh;
 }
 
 code {

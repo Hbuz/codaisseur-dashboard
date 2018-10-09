@@ -1,0 +1,44 @@
+.btn_companies-total {
+    height: 9vh;
+}
+.btn_companies-total h1{
+    font-size: 5em;
+    text-align: center;
+    padding: 3%;
+}
+
+.btn_companies-different-text {
+    font-size: 85%;
+    text-align: center;
+    padding: 3%;
+}
+
+.btn_companies-different-text {
+    height: 7vh;
+}
+
+.btn_companies-stock-image {
+    height: 15vh;
+}
+
+.btn_companies-stock-image img{
+    max-width: 99%;
+    max-height: 99%;
+    padding: 5%;
+}
+
+.btn_companies-total-container {
+    height: 40vh;
+}
+
+.btn_companies-list-container {
+    height: 30vh;
+    background-color: #FFFFFF !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.btn-company-logo-image img{
+    max-width: 85%;
+    max-height: 85%;
+}

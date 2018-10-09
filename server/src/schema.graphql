@@ -3,7 +3,9 @@
 # import Funny from './generated/prisma.graphql'
 # import Company from './generated/prisma.graphql'
 # import CompanyOrderByInput from "./generated/prisma.graphql"
+# import Events from "./generated/prisma.graphql"
 # import EventsOrderByInput from "./generated/prisma.graphql"
+# import Course from "./generated/prisma.graphql"
 
 
 type Query {
@@ -20,6 +22,8 @@ type Query {
   getAllStudents: [Student!]!
 
   getAllEvents(skip: Int, first: Int, orderBy: EventsOrderByInput): [Events!]!
+
+  getAllCourses: [Course!]!
 }
 
 type Mutation {

@@ -13,6 +13,11 @@ import StudentContainer from './components/StudentContainer'
 import Grid from '@material-ui/core/Grid'
 import EventContainer from "./components/EventContainer";
 import Footer from './components/layout/Footer'
+import NextCourseContainer from "./components/NextCourseContainer";
+import Footer from './components/layout/Footer'
+import Graduated from './components/Graduated'
+import FirstJob from './components/FirstJob'
+
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -35,10 +40,10 @@ class App extends Component {
             <AverageSalary />
             <MaleFemaleAge />
           </nav> */}
-          <main style={{ marginTop: "2%", marginLeft: "5%", marginRight: "5%", marginBottom: "2%" }}>
+          <main style={{ marginTop: "1%", marginLeft: "5%", marginRight: "5%", marginBottom: "1%" }}>
             <Grid container direction="row" justify="center" spacing={16}>
               <Grid item xs={3}>
-                <Grid container direction="column">
+                <Grid container direction="column" className="btn-main-grid-column">
                   <Grid item>
                     <TopBar />
                   </Grid>
@@ -51,15 +56,24 @@ class App extends Component {
                 </Grid>
               </Grid>
               <Grid item xs={3}>
-                <Grid container direction="column">
+                <Grid container direction="column" className="btn-main-grid-column">
+                  <Grid item>
+                    <Graduated />
+                  </Grid>
+                  <Grid item>
+                    <FirstJob />
+                  </Grid>
+                  <Grid item>
+                    <MaleFemaleAge /> 
+                  </Grid>
                   <Grid item style={{ backgroundColor: "#FFFFFF" }}>
                     <NationalitiesContainer />
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item xs={3}>
-                <Grid container direction="column">
-                  <Grid item style={{ backgroundColor: "#E94C4C" }}>
+                <Grid container direction="column" className="btn-main-grid-column">
+                  <Grid item>
                     <AverageSalary />
                   </Grid>
                   <Grid item style={{ backgroundColor: "#FFFFFF", marginTop: "5%" }}>
@@ -68,12 +82,12 @@ class App extends Component {
                 </Grid>
               </Grid>
               <Grid item xs={3}>
-                <Grid container direction="column" >
+                <Grid container direction="column" className="btn-main-grid-column">
                   <Grid item style={{ backgroundColor: "#FFFFFF" }}>
                     <StudentContainer client={client} />
                   </Grid>
-                  <Grid item style={{ backgroundColor: "#E94C4C", marginTop: "5%" }}>
-                    <MaleFemaleAge />
+                  <Grid item style={{ backgroundColor: "#E94C4C", marginTop: "5%"  }}>
+                    <NextCourseContainer />
                   </Grid>
                 </Grid>
               </Grid>

@@ -3,22 +3,21 @@ import Grid from '@material-ui/core/Grid'
 
 export default function Student({ student }) {
   return (<div>
-    {console.log("PROPROPRO: " + JSON.stringify(student))}
 
-    <Grid container direction="column" alignItems="center">
+    <Grid container direction="column" alignItems="center"   >
       <Grid item>
         {student && student.gender === "M" &&
-          <img style={{ marginLeft: "7.5%", height: "85%", width: "85%" }} src="https://cdn1.iconfinder.com/data/icons/data-science-1-1/512/20-512.png" />
+          <img style={{ marginTop:"2vh",  height: "20vh", width: "20vh" }} src="https://cdn1.iconfinder.com/data/icons/data-science-1-1/512/20-512.png" />
         }
         {student && student.gender === "F" &&
-          <img style={{ marginLeft: "7.5%", height: "85%", width: "85%" }} src="https://cdn3.iconfinder.com/data/icons/project-management-1-3/128/43-512.png" />
+          <img style={{ marginTop:"2vh", height: "20vh", width: "20vh"}} src="https://cdn3.iconfinder.com/data/icons/project-management-1-3/128/43-512.png" />
         }
       </Grid>
       <Grid item>
         <h3>{student && `${student["name"]}`}</h3>
       </Grid>
       <Grid item>
-        <h5>{student && `${student.description}`}</h5>
+        <h6 style={{ marginLeft:"1vh"}}>{student && `${student.description}`}</h6>
       </Grid>
       <Grid item>
         <h5>{student && `${student.status}`}</h5>

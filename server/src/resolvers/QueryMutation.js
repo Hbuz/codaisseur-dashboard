@@ -72,6 +72,12 @@ module.exports = {
         info,
       )
     },
+
+    getAllCourses: (_, args, context, info) => {
+      return context.prisma.query.courses(
+        info,
+      )
+    },
   },
   Mutation: {
     addNationality: (_, args, context, info) => {

@@ -10,14 +10,14 @@ class Nationalities extends React.PureComponent {
     this.state = {}
   }
   
-  getFlags = (api, countryCode) => {
+  getFlags = (api, countryCode) => { // From https://restcountries.eu/
     fetch(api + countryCode)
     .then(response => response.json())
     .then(data => {
       const country = data
       this.setState({
-        flag: country.flag})
-      console.log(this.state)
+        flag: country.flag,
+        name: country.name})
     })
   }
 
@@ -27,9 +27,9 @@ class Nationalities extends React.PureComponent {
 
   render() {
     return (<div>
-      <h1>{`${this.props.nationality.nationality}: ${this.props.nationality.count}` }</h1>
       <div className="btn_nationalities-flags">
-        <img src={this.state.flag} alt={`${this.state.name} flag`} />
+        <span><img src={this.state.flag} alt={`${this.state.name} flag`} />
+       {this.state.name}</span>
       </div>
     </div>)
   }
