@@ -12,10 +12,12 @@ import CompaniesContainer from './components/CompaniesContainer'
 import StudentContainer from './components/StudentContainer'
 import Grid from '@material-ui/core/Grid'
 import EventContainer from "./components/EventContainer";
-import NextCourseContainer from "./components/NextCourseContainer";
 import Footer from './components/layout/Footer'
+import NextCourseContainer from "./components/NextCourseContainer";
+
 import Graduated from './components/Graduated'
 import FirstJob from './components/FirstJob'
+
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"

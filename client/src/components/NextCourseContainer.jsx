@@ -6,7 +6,8 @@ import { Query } from "react-apollo";
 class NextCourseContainer extends React.PureComponent {
 
   render() {
-    return <Query
+    return (
+    <Query
       query={gql`
         {
           getAllCourses {
@@ -24,13 +25,16 @@ class NextCourseContainer extends React.PureComponent {
         // console.log("RESULT NEXT COURSE: " + JSON.stringify(data));
 
 
-        return <div>
-          <NextCourse nextCourses={data.getAllCourses} />
-        </div>
-
-      }}
+        return (
+          <div>
+            <NextCourse nextCourses={data.getAllCourses} />
+          </div>
+        )
+      }
+    }
 
     </Query>
+    )
   }
 }
 

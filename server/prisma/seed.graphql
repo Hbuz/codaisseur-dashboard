@@ -172,7 +172,7 @@ N103: createNationality(data: {nationality:"UZ",count:1}) {id}
     e6: createEvents(data: {name: "Conference", date: "10-26-2018 09:00", description:"", where:"Codaisseur Building"}) {id}
 
     c1: createCourse(data: {date: "October 12", type: "Code", maleParticipants:12 , femaleParticipants:8}){id}
-    c2: createCourse(data: {date: "October 12", type: "Design", maleParticipants:1 , femaleParticipants:2}){id}
+    c2: createCourse(data: {date: "October 12", type: "UI/UX Design", maleParticipants:1 , femaleParticipants:2}){id}
     c3: createCourse(data: {date: "December 20", type: "Code", maleParticipants:1 , femaleParticipants:0}){id}
 
 }
