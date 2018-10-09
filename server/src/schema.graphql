@@ -23,7 +23,7 @@ type Query {
 
   getAllEvents(where: EventsWhereInput, skip: Int, first: Int, orderBy: EventsOrderByInput): [Events!]!
 
-  getAllCourses: [Course!]!
+  getAllCourses(where: CourseWhereInput, skip: Int, first: Int, orderBy: CourseOrderByInput): [Course!]!
 }
 
 type Mutation {

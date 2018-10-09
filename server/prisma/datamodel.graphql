@@ -49,7 +49,7 @@ type Events {
 
 type Course {
   id: ID! @unique
-  date: String
+  date: Int
   type: String
   maleParticipants: Int
   femaleParticipants: Int
