@@ -58,13 +58,13 @@ class App extends Component {
                   <Grid item>
                     <Graduated />
                   </Grid>
-                  <Grid item>
+                  <Grid item style={{ marginTop: "2%" }}>
                     <FirstJob />
                   </Grid>
-                  <Grid item>
+                  <Grid item style={{ marginTop: "2%" }}>
                     <MaleFemaleAge /> 
                   </Grid>
-                  <Grid item>
+                  <Grid item style={{ marginTop: "2%" }}>
                     <NationalitiesContainer client={client} />
                   </Grid>
                 </Grid>

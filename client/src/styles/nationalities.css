@@ -29,10 +29,14 @@
   overflow: hidden;
   font-size: 85%;
   text-align: center;
+  color: #E94C4C;
+  font-weight: 800;
 }
 
 .btn_nationalities-flags {
   max-height: 20%;
   flex-grow: 1;
+  color: white;
+  padding-left: 1%;
 }
 
