@@ -57,13 +57,3 @@ export default function NextCourse({ nextCourses }) {
     </div>
   )
 }
-
-
-
-
-  {/* <div>
-    {console.log("PROPROPRO: " + JSON.stringify(nextCourses))}
-    <h1>{`${nextCourse && nextCourse.date}: ${nextCourse && nextCourse.type}`}</h1>
-    <h3>{`${nextCourse && nextCourse.maleParticipants}`}</h3>
-    <h3>{`${nextCourse && nextCourse.femaleParticipants}`}</h3>
-  </div> */}
