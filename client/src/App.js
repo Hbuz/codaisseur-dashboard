@@ -14,7 +14,7 @@ import Grid from '@material-ui/core/Grid'
 import EventContainer from "./components/EventContainer";
 import Footer from './components/layout/Footer'
 import NextCourseContainer from "./components/NextCourseContainer";
-import Footer from './components/layout/Footer'
+
 import Graduated from './components/Graduated'
 import FirstJob from './components/FirstJob'
 
