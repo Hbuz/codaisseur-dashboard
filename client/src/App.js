@@ -12,6 +12,7 @@ import CompaniesContainer from './components/CompaniesContainer'
 import StudentContainer from './components/StudentContainer'
 import Grid from '@material-ui/core/Grid'
 import EventContainer from "./components/EventContainer";
+import Footer from './components/layout/Footer'
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -79,7 +80,7 @@ class App extends Component {
             </Grid>
           </main>
           <footer>
-            {/* <Footer /> */}
+            <Footer />
           </footer>
         </div>
       </ApolloProvider>
