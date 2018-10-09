@@ -29,7 +29,7 @@ class NationalitiesContainer extends React.PureComponent {
           return (
             <div className="btn-nationalities-flags">
               {data.getAllNationalities.map((nationality) => (
-              <div key={nationality.item}>
+              <div key={nationality.item} className="btn_nationalities-flags">
                 <Nationalities nationality={nationality} />
               </div>
               ))}

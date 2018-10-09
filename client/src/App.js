@@ -64,7 +64,7 @@ class App extends Component {
                   <Grid item>
                     <MaleFemaleAge /> 
                   </Grid>
-                  <Grid item style={{ backgroundColor: "#FFFFFF" }}>
+                  <Grid item>
                     <NationalitiesContainer />
                   </Grid>
                 </Grid>

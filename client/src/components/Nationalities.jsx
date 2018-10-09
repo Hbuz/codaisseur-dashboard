@@ -26,12 +26,10 @@ class Nationalities extends React.PureComponent {
   }
 
   render() {
-    return (<div>
-      <div className="btn_nationalities-flags">
+    return (
         <span><img src={this.state.flag} alt={`${this.state.name} flag`} />
        {this.state.name}</span>
-      </div>
-    </div>)
+    )
   }
 }
 
