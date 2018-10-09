@@ -21,7 +21,7 @@ type Query {
   student(id: String!): Student
   getAllStudents: [Student!]!
 
-  getAllEvents(skip: Int, first: Int, orderBy: EventsOrderByInput): [Events!]!
+  getAllEvents(where: EventsWhereInput, skip: Int, first: Int, orderBy: EventsOrderByInput): [Events!]!
 
   getAllCourses: [Course!]!
 }

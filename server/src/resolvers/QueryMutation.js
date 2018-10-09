@@ -67,8 +67,9 @@ module.exports = {
     },
 
     getAllEvents: (_, args, context, info) => {
+      console.log("ARGS: "+JSON.stringify(args))
       return context.prisma.query.eventses(
-        { skip: args.skip, first: args.first, orderBy: args.orderBy },
+        { where: args.where, skip: args.skip, first: args.first, orderBy: args.orderBy },
         info,
       )
     },

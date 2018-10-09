@@ -42,7 +42,7 @@ type Events {
   id: ID! @unique
   name: String!
   logoType: String 
-  date: String
+  date: Int
   description: String
   where: String
 }

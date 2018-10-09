@@ -125,7 +125,7 @@ N93: createNationality(data: {nationality:"IND",count:1}) {id}
 N94: createNationality(data: {nationality:"CY",count:1}) {id}
 N95: createNationality(data: {nationality:"SG",count:1}) {id}
 N96: createNationality(data: {nationality:"CU",count:1}) {id}
-N97: createNationality(data: {nationality:"AN",count:1}) {id}
+N97: createNationality(data: {nationality:"ANT",count:1}) {id}
 N98: createNationality(data: {nationality:"JE",count:1}) {id}
 N99: createNationality(data: {nationality:"AL",count:1}) {id}
 N100: createNationality(data: {nationality:"YE",count:1}) {id}
@@ -164,12 +164,15 @@ N103: createNationality(data: {nationality:"UZ",count:1}) {id}
     graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
 
 
-    e1: createEvents(data: {name: "MeetUP", date: "10-08-2018 10:00", description:"", where:"Codaisseur Building"}) {id}
-    e2: createEvents(data: {name: "Demo Night", date: "12-10-2018 16:00", description:"", where:"Codaisseur Building"}) {id}
-    e3: createEvents(data: {name: "Open Evening", date: "11-06-2018 20:00", description:"", where:"Codaisseur Building"}) {id}
-    e4: createEvents(data: {name: "Start academy", date: "10-12-2018 09:30", description:"", where:"Codaisseur Building"}) {id}
-    e5: createEvents(data: {name: "Bootcamp", date: "10-12-2018 09:30", description:"", where:"Codaisseur Building"}) {id}
-    e6: createEvents(data: {name: "Conference", date: "10-26-2018 09:00", description:"", where:"Codaisseur Building"}) {id}
+    
+    e1: createEvents(data: {name: "MeetUP", date: 1538985600, description:"", where:"Codaisseur Building"}) {id}
+    e2: createEvents(data: {name: "Demo Night", date: 1539352800, description:"", where:"Codaisseur Building"}) {id}
+    e3: createEvents(data: {name: "Open Evening", date: 1541530800, description:"", where:"Codaisseur Building"}) {id}
+    e4: createEvents(data: {name: "Start academy", date: 1539329400, description:"", where:"Codaisseur Building"}) {id}
+    e5: createEvents(data: {name: "Bootcamp", date: 1539329400, description:"", where:"Codaisseur Building"}) {id}
+    e6: createEvents(data: {name: "Conference", date: 1540537200, description:"", where:"Codaisseur Building"}) {id}
+    e7: createEvents(data: {name: "Past", date: 1518985600, description:"Past Event", where:"Codaisseur Building"}) {id}
+
 
     c1: createCourse(data: {date: "October 12", type: "Code", maleParticipants:12 , femaleParticipants:8}){id}
     c2: createCourse(data: {date: "October 12", type: "Design", maleParticipants:1 , femaleParticipants:2}){id}
