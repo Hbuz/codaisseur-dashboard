@@ -14,108 +14,128 @@ export default function NextCourse({ nextCourses }) {
 
   return (
     <div className='course-container'>
-      <div className='course-container--first'>
-        <div className='header__container 
-                        course-container__header--primary'
-        >
 
-          <h2>Next Start Date</h2>
+        {/* first block of the component */}
+      <div className='course-container--first'>
+        <div className='course-container__header--primary'
+        >
+      
+          <h2 className="">Next Start Date</h2>
 
         </div>
+      </div>
 
+        {/* second block of the component */}
+      <div className='course-container--second'>
         <div className='date course-container__header--secondary'>
           <h3 className="date__month">
-            {date.format("MMM")}
+            {date.format("MMMM")}
           </h3>
           <h3 className="date__day">
             {date.format("MM")}
           </h3>
         </div>
-        <div className='course-container__header--secondary--2'>
+        <div className='course-container__header--secondary-sub'>
           <h4>Monday</h4>
         </div>
       </div>
 
+        {/* third block of the component */}
+      <div className='course-container--third'>
 
-      <div className='course-container--second'>
-
-        <div className='course-container__header--tertiary'>
+        <div className='sub__grid-1'>
           <h4 className="course__type">
             {nextCourses[0].type + ':'}
           </h4>
         </div>
-
-        <div className='course-container__textbox--gender'>
-          <span className='gender--male'>
-            <img className="male-female-icons" src={maleIcon} alt=''/>
-            <div className="gender__number-container">
-              <p className="gender__number">
-                {nextCourses[0].maleParticipants}
-              </p>
-            </div>
-          </span>
-          <span> </span>
-          <span className='gender--female'>
-            <img src={femaleIcon}  className="male-female-icons" alt=''/>
-              <div className="gender__number-container">
-                <p className="gender__number">
-                  {nextCourses[0].femaleParticipants}
-                </p>
-              </div>
-           </span>
+        
+        <div className='sub__grid-2'>
+          <img  className="male-female-icons" 
+                src={maleIcon} 
+                alt=''
+          />
         </div>
-        <div className='course-container__capacity 
-                        course-container__header--tertiary'
-        >
-          <h4 className="capacity">
-            { calcPercentage(nextCourses[0].maleParticipants
-                          + nextCourses[0].femaleParticipants,
-                            maxCapacityCode
-                            )}
-                            % Full
-          </h4>
-        </div>
-      </div>
 
-      {nextCourses[1] &&
-        <div className='course-container--third'>
-          <div className='course-container__header--tertiary'>
-            <h4 className="course__type"> 
-              {nextCourses[1].type + ':'}
-            </h4>
+          
+        <div className='sub__grid-3'>
+          <div className='participants'>
+          {nextCourses[0].maleParticipants}
           </div>
-          <div className='course-container__textbox--gender'>
-            <span className='gender--male'>
-              <img className="male-female-icons" src={maleIcon} alt=''/> 
-              <div className="gender__number-container">
-                <p className="gender__number">
-                  {nextCourses[1].maleParticipants}
-                </p>
-              </div>
-            </span>
-            <span> </span>
-            <span className='gender--female'>
-              <img src={femaleIcon}  className="male-female-icons" alt=''/>
-              <div className="gender__number-container">
-                <p className="gender__number">
-                  {nextCourses[1].femaleParticipants}
-                </p>
-              </div>
-            </span>
+        </div>
+
+        <div className='sub__grid-4'>
+          <img src={femaleIcon}  className="male-female-icons" alt=''/>
+        </div>
+
+        <div className='sub__grid-5'>
+          <div className='participants'>
+          {nextCourses[0].femaleParticipants}
           </div>
-          <div className='course-container__capacity 
-                          course-container__header--tertiary'
-          >
+        </div>
+
+        <div className= 'sub__grid-6'>
+          <div className="capacity__container">
             <h4 className="capacity">
-              { calcPercentage(nextCourses[1].maleParticipants
-                              + nextCourses[1].femaleParticipants,
-                              maxCapacityDesign
+              { calcPercentage(nextCourses[0].maleParticipants
+                            + nextCourses[0].femaleParticipants,
+                              maxCapacityCode
                               )}
                               % Full
             </h4>
           </div>
         </div>
+      </div>
+
+         {/* fourth block of the component */}
+      {nextCourses[1] &&
+      <div className='course-container--third'>
+
+        <div className='sub__grid-1'>
+          <h4 className="course__type">
+            {nextCourses[1].type + ':'}
+          </h4>
+        </div>
+
+        <div className='sub__grid-2'>
+          <img  className="male-female-icons" 
+                src={maleIcon} 
+                alt=''
+          />
+        </div>
+
+
+        <div className='sub__grid-3'>
+          <div className='participants'>
+          {nextCourses[1].maleParticipants}
+          </div>
+        </div>
+
+        <div className='sub__grid-4'>
+          <img  src={femaleIcon}  
+                className="male-female-icons" 
+                alt=''
+          />
+        </div>
+
+        <div className='sub__grid-5'>
+          <div className='participants'>
+          {nextCourses[1].femaleParticipants}
+          </div>
+        </div>
+
+        <div className= 'sub__grid-6'>
+          <div className="capacity__container">
+            <h4 className="capacity">
+              { calcPercentage(nextCourses[1].maleParticipants
+                            + nextCourses[1].femaleParticipants,
+                              maxCapacityCode
+                              )}
+                              % Full
+            </h4>
+          </div>
+        </div>
+        </div>
       }
     </div>
   )
-}
+} 
