@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
-import { Route, Redirect } from 'react-router-dom'
-import FunnyContainer from './components/FunnyContainer'
+// import FunnyContainer from './components/FunnyContainer'
 import TopBar from "./components/layout/TopBar"
 import NationalitiesContainer from './components/NationalitiesContainer'
 import AverageSalary from './components/AverageSalary'

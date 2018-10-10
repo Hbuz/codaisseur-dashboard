@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Nationalities from './Nationalities'
 import gql from "graphql-tag";
-import { Query } from "react-apollo";
 
 
 class NationalitiesContainer extends React.PureComponent {
@@ -25,7 +24,9 @@ class NationalitiesContainer extends React.PureComponent {
 
   componentDidMount() {
     const natQuery = (page) => this.props.client.query({
-      query: gql` query Dog($page: Int!){
+      query: gql` 
+      query Nationality($page: Int!)
+      {
          getAllNationalities(
               first: 5
               skip: $page
@@ -38,14 +39,14 @@ class NationalitiesContainer extends React.PureComponent {
 
 
     setInterval(() => {
-      if (this.state.page * 1 >= this.state.nationalities.length) {
+      let page = this.state.page
+      if (page * 1 >= this.state.nationalities.length) {
         this.setState({ page: 0 })
       }
       natQuery(this.state.page)
-      this.setState({ page: ++this.state.page })
+      this.setState({ page: ++page })
     }, 1000)
   }
-
 
 
   render() {
@@ -56,7 +57,7 @@ class NationalitiesContainer extends React.PureComponent {
         </div>
         <div className="btn-nationalities-flags">
           {this.state.currentNationalities.map((nationality) =>
-            <div key={nationality.id} className="btn_nationalities-flags">
+            <div key={nationality.nationality} className="btn_nationalities-flags">
               <Nationalities nationality={nationality} />
             </div>
           )}

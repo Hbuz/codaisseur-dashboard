@@ -49,13 +49,11 @@ module.exports = {
     },
     
     getAllStudents: (_, args, context, info) => {
-      // console.log("GET ALL STUDENTS")
       return context.prisma.query.students(
         info,
       )
     },
     student: (_, args, context, info) => {
-      // console.log("GET ONE STUDENT")
       return context.prisma.query.student(
         {
           where: {
@@ -68,13 +66,14 @@ module.exports = {
 
     getAllEvents: (_, args, context, info) => {
       return context.prisma.query.eventses(
-        { skip: args.skip, first: args.first, orderBy: args.orderBy },
+        { where: args.where, skip: args.skip, first: args.first, orderBy: args.orderBy },
         info,
       )
     },
 
     getAllCourses: (_, args, context, info) => {
       return context.prisma.query.courses(
+        { where: args.where, skip: args.skip, first: args.first, orderBy: args.orderBy },
         info,
       )
     },
