@@ -1,7 +1,8 @@
 import * as React from 'react'
 import '../styles/nextCourse.css'
 import moment from 'moment'
-
+import maleIcon from '../assets/upComingClasses/Frame 2 (7).png'
+import femaleIcon from '../assets/upComingClasses/Frame (2).png'
 
 export default function NextCourse({ nextCourses }) {
 
@@ -34,9 +35,11 @@ export default function NextCourse({ nextCourses }) {
         </div>
 
         <div className='course-container__textbox--gender'>
-          <span className='gender--male'>male: {nextCourses[0].maleParticipants}</span>
+          <span className='gender--male'><img className="male-female-icons" src={maleIcon} alt=''/>
+           {nextCourses[0].maleParticipants}</span>
           <span> </span>
-          <span className='gender--female'>female: {nextCourses[0].femaleParticipants}</span>
+          <span className='gender--female'><img src={femaleIcon}  className="male-female-icons" alt=''/>
+           {nextCourses[0].femaleParticipants}</span>
         </div>
         <div className='course-container__capacity course-container__header--tertiary'>
           <h4 className="capacity">{calcPercentage(nextCourses[0].maleParticipants + nextCourses[0].femaleParticipants,
@@ -50,9 +53,11 @@ export default function NextCourse({ nextCourses }) {
             <h4 className="course__type"> {'UI/UX ' + nextCourses[1].type + ':'}</h4>
           </div>
           <div className='course-container__textbox--gender'>
-            <span className='gender--male'>male: {nextCourses[1].maleParticipants}</span>
+            <span className='gender--male'><img className="male-female-icons" src={maleIcon} alt=''/> 
+            {nextCourses[1].maleParticipants}</span>
             <span> </span>
-            <span className='gender--female'>female: {nextCourses[1].femaleParticipants}</span>
+            <span className='gender--female'><img src={femaleIcon}  className="male-female-icons" alt=''/>
+             {nextCourses[1].femaleParticipants}</span>
           </div>
           <div className='course-container__capacity course-container__header--tertiary'>
             <h4 className="capacity">{calcPercentage(nextCourses[1].maleParticipants + nextCourses[1].femaleParticipants,
