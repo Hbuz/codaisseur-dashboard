@@ -1,12 +1,18 @@
 import * as React from 'react'
 import Grid from '@material-ui/core/Grid'
 import hiredStamp from '../assets/students/Hired Stamp.png'
+import gradStamp from '../assets/students/Graduated Stamp.png'
 
 export default function Student({ student }) {
   return (<div>
     {student && student.status === 'hired' &&
       <div className="hired-conditional-render">
         <img src={hiredStamp} alt=''/>
+      </div>
+    }
+    {student && student.status !== 'hired' &&
+      <div className="grad-conditional-render">
+        <img src={gradStamp} alt=''/>
       </div>
     }
     <Grid container direction="column" alignItems="center"   >
