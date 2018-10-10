@@ -1,18 +1,21 @@
 import * as React from 'react'
 import companySvg from '../assets/companies/noun_company_509354.svg' 
-import '../styles/companies.css'
+// import '../styles/companies.css'
+import '../styles/companiesTotal.css'
 
 export default function CompaniesOverview({companies}) {
   return (
-    <div className="btn_companies-total-container">
-        <div className="btn_companies-total">
-            <h1>{companies}</h1>
+    <div className="companies__container--total">
+        <div className="companies__header-container">
+            <h1 className="companies__header--main">{companies + '+'}</h1>
         </div>
-        <div className="btn_companies-different-text">
-            <h2>different companies</h2>
+        <div className="companies__header-container--secondary">
+            <h2 className="companies__header--secondary">Different Companies</h2>
         </div>
-        <div className="btn_companies-stock-image">
-            <img src={companySvg} alt='company'/>
+        <div className="companies__image-container">
+            <div className="companies__image">
+                <img className="companies__image" src={companySvg} alt='company'/>
+            </div>
         </div> 
     </div>
   )

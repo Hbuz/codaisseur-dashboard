@@ -14,10 +14,10 @@ class EventContainer extends React.PureComponent {
     return (
       <div className="btn-events-container">
       <Grid container direction="column" alignItems="center">
-        <Grid item>
+        <Grid item style={{backgroundColor: "#E94C4C", width: "100%", textAlign: "center", color: "#ffff"}}>
         <h2>Upcoming Events</h2>
         </Grid>
-        <Grid item>
+        <Grid item style={{ width: "75%", textAlign: "left", marginTop: "2%"}}>
           <Query
             query={gql`
             query Events($dateNow: Int!)
