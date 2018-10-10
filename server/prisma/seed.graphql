@@ -79,7 +79,7 @@ N47: createNationality(data: {nationality:"AT",count:3}) {id}
 N48: createNationality(data: {nationality:"GM",count:3}) {id}
 N49: createNationality(data: {nationality:"CD",count:3}) {id}
 N50: createNationality(data: {nationality:"TN",count:3}) {id}
-N51: createNationality(data: {nationality:"NP",count:3}) {id}
+# N51: createNationality(data: {nationality:"NP",count:3}) {id}
 N52: createNationality(data: {nationality:"LV",count:3}) {id}
 N53: createNationality(data: {nationality:"NZ",count:2}) {id}
 N54: createNationality(data: {nationality:"DK",count:2}) {id}
@@ -115,7 +115,7 @@ N83: createNationality(data: {nationality:"SL",count:1}) {id}
 N84: createNationality(data: {nationality:"ME",count:1}) {id}
 N85: createNationality(data: {nationality:"LA",count:1}) {id}
 N86: createNationality(data: {nationality:"HN",count:1}) {id}
-N87: createNationality(data: {nationality:"CH",count:1}) {id}
+# N87: createNationality(data: {nationality:"CH",count:1}) {id}
 N88: createNationality(data: {nationality:"IQ",count:1}) {id}
 N89: createNationality(data: {nationality:"VE",count:1}) {id}
 N90: createNationality(data: {nationality:"MK",count:1}) {id}
@@ -125,7 +125,7 @@ N93: createNationality(data: {nationality:"IND",count:1}) {id}
 N94: createNationality(data: {nationality:"CY",count:1}) {id}
 N95: createNationality(data: {nationality:"SG",count:1}) {id}
 N96: createNationality(data: {nationality:"CU",count:1}) {id}
-N97: createNationality(data: {nationality:"ANT",count:1}) {id}
+# N97: createNationality(data: {nationality:"ANT",count:1}) {id}
 N98: createNationality(data: {nationality:"JE",count:1}) {id}
 N99: createNationality(data: {nationality:"AL",count:1}) {id}
 N100: createNationality(data: {nationality:"YE",count:1}) {id}
