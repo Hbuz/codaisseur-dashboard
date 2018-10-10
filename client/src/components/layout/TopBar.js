@@ -6,15 +6,10 @@ export default function TopBar(props) {
   return (
     <div className="topBar">
       <div className="btn_logo_logo-size">
-      <a href="https://codaisseur.com/become-a-developer">
-        <img src={codaisseurLogo} alt="codaisseur logo"/>
-      </a>
+        <a href="https://codaisseur.com/become-a-developer">
+          <img src={codaisseurLogo} alt="codaisseur logo"/>
+        </a>
       </div>
-      {/* <div className='btn_pageTitle_title-size'>
-        <div className='btn_pageTitle_title-color'>
-          <h1>Welcome to Codaisseur</h1>
-        </div>
-      </div> */}
     </div>
   )
 }

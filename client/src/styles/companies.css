@@ -35,7 +35,7 @@
     align-items: stretch;
 }
 
-.btn_companies-list-container {
+.companies__container--list {
     height: 30vh;
     background-color: #FFFFFF !important;
     display: grid;
