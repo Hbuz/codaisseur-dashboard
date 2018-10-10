@@ -1,9 +1,16 @@
 import * as React from 'react'
+import moment from 'moment'
+import nextArrow from '../assets/events/noun_Next_1263686.svg'
 
 export default function Event({event}) {
-  return (<div>
+  const day = moment.unix(event.date).format("MMM MM, YYYY, h:mm A");
+
+  return (<div className="events-mapped-individual-container">
     {/* {console.log("PROPROPRO: "+JSON.stringify(event))} */}
-    <h3>{`${event && event.name}: ${event && event.description}`}</h3>
-    <h4>{`${event && event.date}`}</h4>
+    <div>
+      <h3><img className="next-arrow-images" src={nextArrow} alt=''/> 
+      <span className="event-title-font-stlye">{event && event.name}:</span> {event && event.description}</h3>
+    </div>
+    <h3>{`${event && day}`}</h3>
   </div>)
 }

@@ -42,14 +42,14 @@ type Events {
   id: ID! @unique
   name: String!
   logoType: String 
-  date: String
+  date: Int
   description: String
   where: String
 }
 
 type Course {
   id: ID! @unique
-  date: String
+  date: Int
   type: String
   maleParticipants: Int
   femaleParticipants: Int

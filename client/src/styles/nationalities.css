@@ -2,9 +2,9 @@
   display: block;
   height: 15%;
   width: 20%;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-  margin-left: 10%;
-  border-radius: 50%, 50%;
+  max-width: 20%;
+  max-height: 15%;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
 }
 
 .nationalities-container-whole {
@@ -42,8 +42,6 @@
   max-height: 20%;
   flex-grow: 1;
   color: white;
-  padding-left: 1%;
- 
-
+  padding-left: 3%;
 }
 
