@@ -16,6 +16,7 @@ import NextCourseContainer from "./components/NextCourseContainer";
 
 import Graduated from './components/Graduated'
 import FirstJob from './components/FirstJob'
+import FooterTicker from './components/layout/FooterTicker'
 
 
 const client = new ApolloClient({
@@ -93,7 +94,7 @@ class App extends Component {
             </Grid>
           </main>
           <footer>
-            <Footer />
+            <FooterTicker client={client}/>
           </footer>
         </div>
       </ApolloProvider>
