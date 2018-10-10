@@ -1,0 +1,158 @@
+.course-container {
+  display: flex;
+  box-sizing: border-box;
+  max-height: 45vh;
+  flex-direction: column;
+
+}
+
+.course-container--first {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+.course-container--second {
+  margin-top: -3%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.course-container--third {
+  /* margin-top: -5%; */
+  display: block;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 10%;
+}
+
+.header__container {
+  background: #ffffff;
+  position: relative;
+  height: 10vh;
+}
+.course-container__capacity{
+  background-color: #ffffff;
+  width: 80%;
+  height: 10%;
+  align-content: center;
+  margin-top: 2%;
+
+}
+/* .course-container__capacity--2{
+  background-color: #ffffff;
+  width: 80%;
+  height: 10%;
+  align-content: center;
+  margin-top: 2%;
+} */
+
+.course-container__header--primary{
+  text-align: justify;
+  margin: 0;
+  color: #E94C4C;
+  position: relative;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+
+}
+
+.course-container__header--secondary{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  color: #ffffff;
+  align-content: center;
+  text-align: center;
+}
+
+.course-container__header--secondary--2{
+  margin-top: -8%;
+  margin-bottom: 5px;
+  display: block;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #ffffff;
+
+}
+
+.course-container__header--tertiary{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  color: #E94C4C;
+  margin: auto;
+  border-radius: 2px;
+  box-shadow: 5px;
+}
+
+.course-container__textbox--gender {
+  display: block;
+  flex-direction: row;
+  position: relative;
+  color: #ffffff;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-left: 5%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  font-weight: 700;
+  text-transform: uppercase;
+
+}
+
+.date{
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.date__month{
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.date__day{
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.course__type {
+  display: block;
+  margin: auto;
+  text-align: left;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+.gender--male{
+  text-align: center;
+  font-size: 1rem;
+}
+
+.gender--female{
+  text-align: center;
+  font-size: 1rem;
+}
+
+.course__type {
+  margin-top: 2%;
+}
+
+.capacity{
+  font-size: 1.2rem;
+}

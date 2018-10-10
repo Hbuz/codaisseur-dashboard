@@ -1,0 +1,13 @@
+.btn-student-container {
+    height: 42.5vh;
+}
+
+.hired-conditional-render {
+    position: absolute;
+    top: 5vh;
+    right: 10vw;
+}
+
+.hired-conditional-render img {
+    height: 10vh;
+}

@@ -1,0 +1,25 @@
+.topBar {
+    /* display: grid;
+    grid-template-columns: 1fr 2fr; */
+    height: 10vh;
+    background-color: white;
+    /* position: sticky; NOT STICKY!!!! */
+    /* top: 87.5vh; */
+    width: 100%;
+}
+
+.btn_pageTitle_title-color h1{
+    color: #D32F2F;
+    font-weight: bold !important;
+    padding-bottom: 2%;
+    font-size: 2em;
+}
+
+.btn_logo_logo-size img{
+    align-content: center;
+    margin-top: 1%;
+    margin-left: 5%;
+    max-width: 75%;
+    max-height: 75%;
+    padding: 5%;
+}

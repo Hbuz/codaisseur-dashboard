@@ -1,7 +1,29 @@
 # import Nationality from './generated/prisma.graphql'
+# import NationalityOrderByInput from "./generated/prisma.graphql"
+# import Funny from './generated/prisma.graphql'
+# import Company from './generated/prisma.graphql'
+# import CompanyOrderByInput from "./generated/prisma.graphql"
+# import Events from "./generated/prisma.graphql"
+# import EventsOrderByInput from "./generated/prisma.graphql"
+# import Course from "./generated/prisma.graphql"
+
 
 type Query {
   nationality(nationality: String!): Nationality
+  getAllNationalities(skip: Int, first: Int, orderBy: NationalityOrderByInput): [Nationality!]!
+
+  funny(item: String!): Funny
+  getAllFunnies: [Funny!]
+
+  company(name: String!): Company
+  getAllCompanies(skip: Int, first: Int, orderBy: CompanyOrderByInput): [Company!]!
+
+  student(id: String!): Student
+  getAllStudents: [Student!]!
+
+  getAllEvents(where: EventsWhereInput, skip: Int, first: Int, orderBy: EventsOrderByInput): [Events!]!
+
+  getAllCourses(where: CourseWhereInput, skip: Int, first: Int, orderBy: CourseOrderByInput): [Course!]!
 }
 
 type Mutation {

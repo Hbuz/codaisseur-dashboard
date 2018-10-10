@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+.clearfix {
+  overflow: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+html {
+  font-size: 62.5%; 
+  font-family: Roboto Mono;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url(./assets/bdf308de717706bd538c35d98a452c31.png);
+  background-size: cover;
+  max-height: 100vh;
+}
+
+main {
+  max-height: 90vh;
+}
+
+html {
+  font-size: 62.5%;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

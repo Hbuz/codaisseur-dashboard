@@ -1,0 +1,27 @@
+.companies__container{
+  display: flex;
+  box-sizing: border-box;
+  height: 78vh;
+  flex-direction: column;
+}
+.companies__total{
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+}
+.companies__container--list{
+  display: flex;
+  /* flex-direction: column; */
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 0%;
+  margin-top: 30%;
+}
+.companies__overview{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 0%;
+ 
+}
