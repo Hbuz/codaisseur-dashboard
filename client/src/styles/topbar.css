@@ -16,6 +16,9 @@
 }
 
 .btn_logo_logo-size img{
+    align-content: center;
+    margin-top: 1%;
+    margin-left: 5%;
     max-width: 75%;
     max-height: 75%;
     padding: 5%;
