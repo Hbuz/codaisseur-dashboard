@@ -22,11 +22,11 @@ class FooterTicker extends React.PureComponent {
       }).then(response => this.setState({ funnies: response.data.getAllFunnies }))
   }
 
-//   renderIndexIcon = () => {
-//     const randomNumber = Math.floor(Math.random())
-//     if (randomNumber < .49) return <img src={downArrow} alt=''/>
-//     else return <img src={upArrow} alt=''/>
-//   }
+  renderIndexIcon = () => {
+    const randomNumber = Math.floor(Math.random() * 100)
+    if (randomNumber < 49) return <img src={downArrow} alt=''/>
+    else return <img src={upArrow} alt=''/>
+  }
 
   render() {
     return (
@@ -34,7 +34,7 @@ class FooterTicker extends React.PureComponent {
         <div className="entire-footer-ticker">
           {this.state.funnies.map(funny =>
           <div className="ticker-item">
-            {funny.item}: {funny.count}
+            {funny.item} index {funny.count} {this.renderIndexIcon()}
           </div>)}
         </div>
       </div>
