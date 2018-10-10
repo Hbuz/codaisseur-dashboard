@@ -10,12 +10,6 @@ type Funny {
   count: Int
 }
 
-type Measurement {
-  id: ID! @unique
-  funny: [Funny!]!
-  measurement: String!
-}
-
 type Company {
   id: ID! @unique
   name: String! @unique
