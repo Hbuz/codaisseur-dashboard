@@ -50,14 +50,13 @@
 } */
 
 .course-container__header--primary{
-  text-align: justify;
+  text-align: center;
   margin: 0;
   color: #E94C4C;
   position: relative;
-  font-style: normal;
   font-weight: bold;
   line-height: normal;
-  font-size: 2rem;
+  font-size: 1.6rem;
   letter-spacing: 0.2rem;
 
 }
@@ -104,7 +103,7 @@
   color: #ffffff;
   text-align: left;
   font-size: 1.2rem;
-  margin-left: 5%;
+  margin-left: 15%;
   margin-bottom: 2%;
   margin-top: 2%;
   font-weight: 700;
@@ -155,4 +154,8 @@
 
 .capacity{
   font-size: 1.2rem;
+}
+
+.male-female-icons {
+  height: 2vh;
 }

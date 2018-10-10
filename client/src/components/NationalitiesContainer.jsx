@@ -53,11 +53,15 @@ class NationalitiesContainer extends React.PureComponent {
     return (
       <div className="nationalities-container-whole">
         <div className="btn-nationalities-message">
-          <p>Students from all over the world</p>
+          <p className="nationalities__header">
+            Students from all over the world
+          </p>
         </div>
         <div className="btn-nationalities-flags">
           {this.state.currentNationalities.map((nationality) =>
-            <div key={nationality.nationality} className="btn_nationalities-flags">
+            <div  key={nationality.nationality} 
+                  className="btn_nationalities-flags"
+            >
               <Nationalities nationality={nationality} />
             </div>
           )}

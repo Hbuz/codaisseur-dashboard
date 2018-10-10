@@ -93,7 +93,7 @@ class App extends Component {
             </Grid>
           </main>
           <footer>
-            <Footer />
+            {/* <Footer /> */}
           </footer>
         </div>
       </ApolloProvider>
