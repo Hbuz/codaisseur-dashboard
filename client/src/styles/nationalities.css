@@ -1,6 +1,10 @@
 .btn_nationalities-flags img{
+  display: block;
   height: 15%;
   width: 20%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  margin-left: 10%;
+  border-radius: 50%, 50%;
 }
 
 .nationalities-container-whole {
@@ -34,9 +38,12 @@
 }
 
 .btn_nationalities-flags {
+  display: block;
   max-height: 20%;
   flex-grow: 1;
   color: white;
   padding-left: 1%;
+ 
+
 }
 
