@@ -36,16 +36,17 @@ class NationalitiesContainer extends React.PureComponent {
         }}`,
       variables: { page: page }
     }).then(response => this.setState({ currentNationalities: response.data.getAllNationalities }))
-
+  
 
     setInterval(() => {
       let page = this.state.page
-      if (page * 1 >= this.state.nationalities.length) {
+      if (page * 5 >= this.state.nationalities.length) {
+        page = 0
         this.setState({ page: 0 })
       }
-      natQuery(this.state.page)
+      natQuery(this.state.page * 5)
       this.setState({ page: ++page })
-    }, 1000)
+    }, 4000)
   }
 
 
@@ -53,11 +54,15 @@ class NationalitiesContainer extends React.PureComponent {
     return (
       <div className="nationalities-container-whole">
         <div className="btn-nationalities-message">
-          <p>Students from all over the world</p>
+          <p className="nationalities__header">
+            Students from all over the world
+          </p>
         </div>
         <div className="btn-nationalities-flags">
           {this.state.currentNationalities.map((nationality) =>
-            <div key={nationality.nationality} className="btn_nationalities-flags">
+            <div  key={nationality.nationality} 
+                  className="btn_nationalities-flags"
+            >
               <Nationalities nationality={nationality} />
             </div>
           )}
@@ -65,46 +70,6 @@ class NationalitiesContainer extends React.PureComponent {
       </div>
     )
   }
-
-
-
-  // render() {
-  //   return (
-  //     <div className="nationalities-container-whole">
-  //       <div className="btn-nationalities-message">
-  //         <p>Students from all over the world</p>
-  //       </div>
-  //       <Query
-  //         query={gql`
-  //         {
-  //         getAllNationalities(
-  //             first: 5
-  //             skip: 0
-  //             orderBy: count_DESC) {
-  //             nationality
-  //             count}
-  //       }`}
-  //       >
-  //         {({ loading, error, data }) => {
-  //           if (loading) return <p>Loading...</p>;
-  //           if (error) return <p>Error :(</p>;
-
-  //           return (
-  //             <div className="btn-nationalities-flags">
-  //               {data.getAllNationalities.map((nationality) => (
-  //                 <div key={nationality.item}>
-  //                   <Nationalities nationality={nationality} />
-  //                 </div>
-  //               ))}
-  //             </div>
-  //           );
-  //         }}
-
-  //       </Query>
-  //     </div>
-  //   )
-  // }
 }
-
 
 export default NationalitiesContainer

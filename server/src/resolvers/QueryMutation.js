@@ -90,6 +90,20 @@ module.exports = {
         info,
       )
     },
+    updateFunny: (_, {data, where}, context, info) => {
+      return context.prisma.mutation.updateFunny(
+        {
+          where: {
+            id: where.id,
+            item: where.item
+          },
+          data: {
+            count: data.count
+          }
+        },
+        info,
+      )
+    },
   }
 }
 

@@ -1,10 +1,6 @@
 .topBar {
-    /* display: grid;
-    grid-template-columns: 1fr 2fr; */
     height: 10vh;
     background-color: white;
-    /* position: sticky; NOT STICKY!!!! */
-    /* top: 87.5vh; */
     width: 100%;
 }
 

@@ -1,45 +1,91 @@
-.btn_nationalities-flags img{
-  height: 15%;
-  width: 20%;
-  max-width: 20%;
-  max-height: 15%;
-  box-sizing: border-box;
+.nationality__container{
+  display: grid;
+  height: 4vh;
+  background-color: #E94C4C;
 }
-
-.nationalities-container-whole {
-  height: 33vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #D32F2F
+.nationalities-container-whole{
+  display: grid;
+  height: 34vh;
+  background-color: #E94C4C;
 }
-
-.btn-nationalities-message {
-  /* max-height: 5vh; */
-  background-color: #ffff;
-}
-
-.btn-nationalities-flags {
-  height: 28vh;
-  background-color: #D32F2F;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  /* box-sizing: border-box; */
-}
-
-.btn-nationalities-message {
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 85%;
+.nationalities__header {
+  background-color: #ffffff;
+  grid-area: 1 / 1 / 2 / 12;
+  height: 5vh;
   text-align: center;
+  margin-top: -1%;
+  margin-bottom: -5%;
+  font-size: 1.6rem;
   color: #E94C4C;
-  font-weight: 800;
+  font-weight: bold;
 }
 
-.btn_nationalities-flags {
-  max-height: 20%;
-  flex-grow: 1;
-  color: white;
-  padding-left: 3%;
+.nationality__flag-container{
+  grid-area: 2 / 1 / 2 / 6;
+  margin: 0%;
+  height: 3vh;
+  background-color: #E94C4C;
+  margin-right: 15px;
 }
 
+.nationality__name-container{
+  grid-area: 2 / 6 / 2 / 12;
+  margin-top: -5%;
+  font-size: 1.6rem; 
+  height: 4vh;
+  background-color: #E94C4C;
+  margin-right: 5px;
+}
+
+.btn_nationalities-flags{
+  display: inline-block;
+  width: 90%;
+  padding: 5px;
+
+
+}
+.nationality__flag-container{
+  /* display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px; */
+}
+
+.btn_nationalities-flags img{
+  display: inline-block;
+  /* grid-auto-flow: inherit; */
+  margin-right: 2px;
+  height: 100%;
+  width: 95%;
+  max-width: 50px;
+  max-height: 100%;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 0px;
+}
+
+.nationality__name-container{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.nat__name{
+  color: #ffffff;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+*/
+
+p{
+  font-size: 1.6rem;
+  color: #E94C4C;
+  font-weight: bold;
+}
