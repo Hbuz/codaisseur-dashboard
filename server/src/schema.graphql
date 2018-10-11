@@ -6,6 +6,8 @@
 # import Events from "./generated/prisma.graphql"
 # import EventsOrderByInput from "./generated/prisma.graphql"
 # import Course from "./generated/prisma.graphql"
+# import FunnyWhereUniqueInput from "./generated/prisma.graphql"
+# import FunnyUpdateInput from "./generated/prisma.graphql"
 
 
 type Query {
@@ -28,4 +30,6 @@ type Query {
 
 type Mutation {
   addNationality(nationality: String!, count: Int!): Nationality!
+
+  updateFunny(data: FunnyUpdateInput!, where: FunnyWhereUniqueInput!): Funny!
 }
