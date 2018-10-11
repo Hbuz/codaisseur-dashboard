@@ -40,10 +40,11 @@ class NationalitiesContainer extends React.PureComponent {
 
     setInterval(() => {
       let page = this.state.page
-      if (page * 1 >= this.state.nationalities.length) {
+      if (page * 5 >= this.state.nationalities.length) {
+        page = 0
         this.setState({ page: 0 })
       }
-      natQuery(this.state.page)
+      natQuery(this.state.page * 5)
       this.setState({ page: ++page })
     }, 1000)
   }
@@ -69,46 +70,6 @@ class NationalitiesContainer extends React.PureComponent {
       </div>
     )
   }
-
-
-
-  // render() {
-  //   return (
-  //     <div className="nationalities-container-whole">
-  //       <div className="btn-nationalities-message">
-  //         <p>Students from all over the world</p>
-  //       </div>
-  //       <Query
-  //         query={gql`
-  //         {
-  //         getAllNationalities(
-  //             first: 5
-  //             skip: 0
-  //             orderBy: count_DESC) {
-  //             nationality
-  //             count}
-  //       }`}
-  //       >
-  //         {({ loading, error, data }) => {
-  //           if (loading) return <p>Loading...</p>;
-  //           if (error) return <p>Error :(</p>;
-
-  //           return (
-  //             <div className="btn-nationalities-flags">
-  //               {data.getAllNationalities.map((nationality) => (
-  //                 <div key={nationality.item}>
-  //                   <Nationalities nationality={nationality} />
-  //                 </div>
-  //               ))}
-  //             </div>
-  //           );
-  //         }}
-
-  //       </Query>
-  //     </div>
-  //   )
-  // }
 }
-
 
 export default NationalitiesContainer
