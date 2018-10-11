@@ -53,3 +53,7 @@
     font-size: 1.5rem;
     color: black;
   }
+
+  .ticker-item img {
+    height: 2vh;
+  }

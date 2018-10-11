@@ -1,31 +1,57 @@
+.nationalities-container-whole {
+  height: 34vh;
+  display: block;
+  flex-direction: column;
+  background-color: #D32F2F;
+
+}
 .btn_nationalities-flags img{
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  margin-left: 10%;
   height: 15%;
   width: 20%;
   max-width: 20%;
   max-height: 15%;
-  box-sizing: border-box;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+.nationalities__header {
+  text-align: center;
+  text-shadow: #ffff;
+  font-size: 1rem; 
+  text-align: inherit;
+}
+.nationality__flag-container{
+  display: flex;
+  flex-direction: row;
 }
 
-.nationalities-container-whole {
-  height: 33vh;
+.nationality__name-container{
   display: flex;
-  flex-direction: column;
-  background-color: #D32F2F
+  float: center;
+  flex-direction: row;
+  text-shadow: #ffff;
+  font-size: 1.6rem; 
 }
+
 
 .btn-nationalities-message {
-  /* max-height: 5vh; */
   background-color: #ffff;
+
 }
 
-.btn-nationalities-flags {
+/* .btn-nationalities-flags {
   height: 28vh;
   background-color: #D32F2F;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  /* box-sizing: border-box; */
+
+
 }
+
 
 .btn-nationalities-message {
   white-space: nowrap;
@@ -37,9 +63,11 @@
 }
 
 .btn_nationalities-flags {
+  display: block;
   max-height: 20%;
   flex-grow: 1;
   color: white;
   padding-left: 3%;
 }
+*/
 
