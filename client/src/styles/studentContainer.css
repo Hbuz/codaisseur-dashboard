@@ -5,9 +5,19 @@
 .hired-conditional-render {
     position: absolute;
     top: 5vh;
-    right: 10vw;
+    right: 9vw;
 }
 
 .hired-conditional-render img {
     height: 10vh;
+}
+
+.grad-conditional-render {
+    position: absolute;
+    top: 5vh;
+    right: 7.5vw;
+}
+
+.grad-conditional-render img {
+    height: 11vh;
 }

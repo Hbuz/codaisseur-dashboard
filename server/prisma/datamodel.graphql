@@ -54,3 +54,8 @@ type Course {
   maleParticipants: Int
   femaleParticipants: Int
 }
+
+enum Trend {
+  Up,
+  Down
+}
