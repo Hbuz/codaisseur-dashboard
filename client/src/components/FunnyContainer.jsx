@@ -4,6 +4,28 @@ import gql from "graphql-tag";
 import { Query } from "react-apollo";
 
 class FunnyContainer extends React.PureComponent {
+  componentDidMount() {
+    const funnyQuery = (item, value) => this.props.client.query({
+      query: gql` 
+      mutation Funny($item: String!, $value: Int!)
+      {
+         updateFunny(
+              item: $item
+              value: $value
+              ) {
+              item
+              count
+        }}`,
+      variables: { item: item, value: value }
+    }).then(response => console.log(JSON.stringify(response)))
+
+    setInterval(() => {
+      console.log("Ciao")
+      // let page = this.state.page
+      // funnyQuery("coffee", 1)
+      // this.setState({ page: ++page })
+    }, 3000)
+  }
 
   render() {
     return <Query

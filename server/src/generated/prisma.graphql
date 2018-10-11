@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Wed Oct 10 2018 10:00:29 GMT+0200 (CEST)
+# timestamp: Wed Oct 10 2018 16:18:05 GMT+0200 (CEST)
 
 type AggregateCompany {
   count: Int!
@@ -14,6 +14,10 @@ type AggregateEvents {
 }
 
 type AggregateFunny {
+  count: Int!
+}
+
+type AggregateMeasurement {
   count: Int!
 }
 
@@ -968,6 +972,11 @@ input FunnyCreateInput {
   count: Int
 }
 
+input FunnyCreateManyInput {
+  create: [FunnyCreateInput!]
+  connect: [FunnyWhereUniqueInput!]
+}
+
 """An edge in a connection."""
 type FunnyEdge {
   """The item at the end of the edge."""
@@ -1035,9 +1044,34 @@ input FunnySubscriptionWhereInput {
   node: FunnyWhereInput
 }
 
+input FunnyUpdateDataInput {
+  item: String
+  count: Int
+}
+
 input FunnyUpdateInput {
   item: String
   count: Int
+}
+
+input FunnyUpdateManyInput {
+  create: [FunnyCreateInput!]
+  connect: [FunnyWhereUniqueInput!]
+  disconnect: [FunnyWhereUniqueInput!]
+  delete: [FunnyWhereUniqueInput!]
+  update: [FunnyUpdateWithWhereUniqueNestedInput!]
+  upsert: [FunnyUpsertWithWhereUniqueNestedInput!]
+}
+
+input FunnyUpdateWithWhereUniqueNestedInput {
+  where: FunnyWhereUniqueInput!
+  data: FunnyUpdateDataInput!
+}
+
+input FunnyUpsertWithWhereUniqueNestedInput {
+  where: FunnyWhereUniqueInput!
+  update: FunnyUpdateDataInput!
+  create: FunnyCreateInput!
 }
 
 input FunnyWhereInput {
@@ -1164,43 +1198,237 @@ Long can represent values between -(2^63) and 2^63 - 1.
 """
 scalar Long
 
+type Measurement implements Node {
+  id: ID!
+  funny(where: FunnyWhereInput, orderBy: FunnyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Funny!]
+  measurement: String!
+}
+
+"""A connection to a list of items."""
+type MeasurementConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [MeasurementEdge]!
+  aggregate: AggregateMeasurement!
+}
+
+input MeasurementCreateInput {
+  measurement: String!
+  funny: FunnyCreateManyInput
+}
+
+"""An edge in a connection."""
+type MeasurementEdge {
+  """The item at the end of the edge."""
+  node: Measurement!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum MeasurementOrderByInput {
+  id_ASC
+  id_DESC
+  measurement_ASC
+  measurement_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type MeasurementPreviousValues {
+  id: ID!
+  measurement: String!
+}
+
+type MeasurementSubscriptionPayload {
+  mutation: MutationType!
+  node: Measurement
+  updatedFields: [String!]
+  previousValues: MeasurementPreviousValues
+}
+
+input MeasurementSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [MeasurementSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [MeasurementSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [MeasurementSubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: MeasurementWhereInput
+}
+
+input MeasurementUpdateInput {
+  measurement: String
+  funny: FunnyUpdateManyInput
+}
+
+input MeasurementWhereInput {
+  """Logical AND on all given filters."""
+  AND: [MeasurementWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [MeasurementWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [MeasurementWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  measurement: String
+
+  """All values that are not equal to given value."""
+  measurement_not: String
+
+  """All values that are contained in given list."""
+  measurement_in: [String!]
+
+  """All values that are not contained in given list."""
+  measurement_not_in: [String!]
+
+  """All values less than the given value."""
+  measurement_lt: String
+
+  """All values less than or equal the given value."""
+  measurement_lte: String
+
+  """All values greater than the given value."""
+  measurement_gt: String
+
+  """All values greater than or equal the given value."""
+  measurement_gte: String
+
+  """All values containing the given string."""
+  measurement_contains: String
+
+  """All values not containing the given string."""
+  measurement_not_contains: String
+
+  """All values starting with the given string."""
+  measurement_starts_with: String
+
+  """All values not starting with the given string."""
+  measurement_not_starts_with: String
+
+  """All values ending with the given string."""
+  measurement_ends_with: String
+
+  """All values not ending with the given string."""
+  measurement_not_ends_with: String
+  funny_every: FunnyWhereInput
+  funny_some: FunnyWhereInput
+  funny_none: FunnyWhereInput
+}
+
+input MeasurementWhereUniqueInput {
+  id: ID
+}
+
 type Mutation {
   createNationality(data: NationalityCreateInput!): Nationality!
-  createFunny(data: FunnyCreateInput!): Funny!
+  createMeasurement(data: MeasurementCreateInput!): Measurement!
   createCompany(data: CompanyCreateInput!): Company!
   createStudent(data: StudentCreateInput!): Student!
   createEvents(data: EventsCreateInput!): Events!
   createCourse(data: CourseCreateInput!): Course!
+  createFunny(data: FunnyCreateInput!): Funny!
   updateNationality(data: NationalityUpdateInput!, where: NationalityWhereUniqueInput!): Nationality
-  updateFunny(data: FunnyUpdateInput!, where: FunnyWhereUniqueInput!): Funny
+  updateMeasurement(data: MeasurementUpdateInput!, where: MeasurementWhereUniqueInput!): Measurement
   updateCompany(data: CompanyUpdateInput!, where: CompanyWhereUniqueInput!): Company
   updateStudent(data: StudentUpdateInput!, where: StudentWhereUniqueInput!): Student
   updateEvents(data: EventsUpdateInput!, where: EventsWhereUniqueInput!): Events
   updateCourse(data: CourseUpdateInput!, where: CourseWhereUniqueInput!): Course
+  updateFunny(data: FunnyUpdateInput!, where: FunnyWhereUniqueInput!): Funny
   deleteNationality(where: NationalityWhereUniqueInput!): Nationality
-  deleteFunny(where: FunnyWhereUniqueInput!): Funny
+  deleteMeasurement(where: MeasurementWhereUniqueInput!): Measurement
   deleteCompany(where: CompanyWhereUniqueInput!): Company
   deleteStudent(where: StudentWhereUniqueInput!): Student
   deleteEvents(where: EventsWhereUniqueInput!): Events
   deleteCourse(where: CourseWhereUniqueInput!): Course
+  deleteFunny(where: FunnyWhereUniqueInput!): Funny
   upsertNationality(where: NationalityWhereUniqueInput!, create: NationalityCreateInput!, update: NationalityUpdateInput!): Nationality!
-  upsertFunny(where: FunnyWhereUniqueInput!, create: FunnyCreateInput!, update: FunnyUpdateInput!): Funny!
+  upsertMeasurement(where: MeasurementWhereUniqueInput!, create: MeasurementCreateInput!, update: MeasurementUpdateInput!): Measurement!
   upsertCompany(where: CompanyWhereUniqueInput!, create: CompanyCreateInput!, update: CompanyUpdateInput!): Company!
   upsertStudent(where: StudentWhereUniqueInput!, create: StudentCreateInput!, update: StudentUpdateInput!): Student!
   upsertEvents(where: EventsWhereUniqueInput!, create: EventsCreateInput!, update: EventsUpdateInput!): Events!
   upsertCourse(where: CourseWhereUniqueInput!, create: CourseCreateInput!, update: CourseUpdateInput!): Course!
+  upsertFunny(where: FunnyWhereUniqueInput!, create: FunnyCreateInput!, update: FunnyUpdateInput!): Funny!
   updateManyNationalities(data: NationalityUpdateInput!, where: NationalityWhereInput): BatchPayload!
-  updateManyFunnies(data: FunnyUpdateInput!, where: FunnyWhereInput): BatchPayload!
+  updateManyMeasurements(data: MeasurementUpdateInput!, where: MeasurementWhereInput): BatchPayload!
   updateManyCompanies(data: CompanyUpdateInput!, where: CompanyWhereInput): BatchPayload!
   updateManyStudents(data: StudentUpdateInput!, where: StudentWhereInput): BatchPayload!
   updateManyEventses(data: EventsUpdateInput!, where: EventsWhereInput): BatchPayload!
   updateManyCourses(data: CourseUpdateInput!, where: CourseWhereInput): BatchPayload!
+  updateManyFunnies(data: FunnyUpdateInput!, where: FunnyWhereInput): BatchPayload!
   deleteManyNationalities(where: NationalityWhereInput): BatchPayload!
-  deleteManyFunnies(where: FunnyWhereInput): BatchPayload!
+  deleteManyMeasurements(where: MeasurementWhereInput): BatchPayload!
   deleteManyCompanies(where: CompanyWhereInput): BatchPayload!
   deleteManyStudents(where: StudentWhereInput): BatchPayload!
   deleteManyEventses(where: EventsWhereInput): BatchPayload!
   deleteManyCourses(where: CourseWhereInput): BatchPayload!
+  deleteManyFunnies(where: FunnyWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -1443,23 +1671,26 @@ type PageInfo {
 
 type Query {
   nationalities(where: NationalityWhereInput, orderBy: NationalityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Nationality]!
-  funnies(where: FunnyWhereInput, orderBy: FunnyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Funny]!
+  measurements(where: MeasurementWhereInput, orderBy: MeasurementOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Measurement]!
   companies(where: CompanyWhereInput, orderBy: CompanyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Company]!
   students(where: StudentWhereInput, orderBy: StudentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Student]!
   eventses(where: EventsWhereInput, orderBy: EventsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Events]!
   courses(where: CourseWhereInput, orderBy: CourseOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Course]!
+  funnies(where: FunnyWhereInput, orderBy: FunnyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Funny]!
   nationality(where: NationalityWhereUniqueInput!): Nationality
-  funny(where: FunnyWhereUniqueInput!): Funny
+  measurement(where: MeasurementWhereUniqueInput!): Measurement
   company(where: CompanyWhereUniqueInput!): Company
   student(where: StudentWhereUniqueInput!): Student
   events(where: EventsWhereUniqueInput!): Events
   course(where: CourseWhereUniqueInput!): Course
+  funny(where: FunnyWhereUniqueInput!): Funny
   nationalitiesConnection(where: NationalityWhereInput, orderBy: NationalityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NationalityConnection!
-  funniesConnection(where: FunnyWhereInput, orderBy: FunnyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FunnyConnection!
+  measurementsConnection(where: MeasurementWhereInput, orderBy: MeasurementOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MeasurementConnection!
   companiesConnection(where: CompanyWhereInput, orderBy: CompanyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CompanyConnection!
   studentsConnection(where: StudentWhereInput, orderBy: StudentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): StudentConnection!
   eventsesConnection(where: EventsWhereInput, orderBy: EventsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): EventsConnection!
   coursesConnection(where: CourseWhereInput, orderBy: CourseOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CourseConnection!
+  funniesConnection(where: FunnyWhereInput, orderBy: FunnyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FunnyConnection!
 
   """Fetches an object given its ID"""
   node(
@@ -1968,9 +2199,10 @@ input StudentWhereUniqueInput {
 
 type Subscription {
   nationality(where: NationalitySubscriptionWhereInput): NationalitySubscriptionPayload
-  funny(where: FunnySubscriptionWhereInput): FunnySubscriptionPayload
+  measurement(where: MeasurementSubscriptionWhereInput): MeasurementSubscriptionPayload
   company(where: CompanySubscriptionWhereInput): CompanySubscriptionPayload
   student(where: StudentSubscriptionWhereInput): StudentSubscriptionPayload
   events(where: EventsSubscriptionWhereInput): EventsSubscriptionPayload
   course(where: CourseSubscriptionWhereInput): CourseSubscriptionPayload
+  funny(where: FunnySubscriptionWhereInput): FunnySubscriptionPayload
 }
