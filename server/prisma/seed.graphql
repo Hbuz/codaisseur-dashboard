@@ -189,10 +189,10 @@ N103: createNationality(data: {nationality:"UZ",count:1}) {id}
     e7: createEvents(data: {name: "Past", date: 1518985600, description:"Past Event", where:"Codaisseur Building"}) {id}
 
 
-    c1: createCourse(data: {date: 1539588600, type: "Code", maleParticipants:18 , femaleParticipants:8}){id}
+    c1: createCourse(data: {date: 1539588600, type: "Programming", maleParticipants:18 , femaleParticipants:8}){id}
     c2: createCourse(data: {date: 1539588600, type: "UI/UX Design", maleParticipants:2 , femaleParticipants:10}){id}
-    c3: createCourse(data: {date: 1546849800, type: "Code", maleParticipants:3 , femaleParticipants:1}){id}
-    c4: createCourse(data: {date: 1549873800, type: "Code", maleParticipants:1 , femaleParticipants:0}){id}
+    c3: createCourse(data: {date: 1546849800, type: "Programming", maleParticipants:3 , femaleParticipants:1}){id}
+    c4: createCourse(data: {date: 1549873800, type: "Programming", maleParticipants:1 , femaleParticipants:0}){id}
     c5: createCourse(data: {date: 1549873800, type: "UI/UX Design", maleParticipants:0 , femaleParticipants:2}){id}
 
 }
