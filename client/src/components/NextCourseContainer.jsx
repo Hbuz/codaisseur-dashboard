@@ -35,7 +35,6 @@ class NextCourseContainer extends React.PureComponent {
       {({ loading, error, data }) => {
         if (loading) return <p>Loading...</p>;
         if (error) return <p>Error :(</p>;
-        // console.log("RESULT NEXT COURSE: " + JSON.stringify(data));
         const courseFetched = data.getAllCourses
         if(courseFetched[0].date !== courseFetched[1].date){
           courseFetched.pop()

@@ -32,7 +32,7 @@ export default function NextCourse({ nextCourses }) {
             {date.format("MMMM")}
           </h3>
           <h3 className="date__day">
-            {date.format("MM")}
+            {date.format("DD")}
           </h3>
         </div>
         <div className='course-container__header--secondary-sub'>
