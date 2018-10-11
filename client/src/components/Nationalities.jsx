@@ -28,12 +28,21 @@ class Nationalities extends React.PureComponent {
   render() {
     this.getFlags(API, this.props.nationality.nationality)
     return (
-      <div>
+      <div className="nationality__container">
         <div className="nationality__flag-container">
-          <img src={this.state.flag} alt={`${this.state.name} flag`} />   
+          <div>
+            <img  src={this.state.flag} 
+                  alt={`${this.state.name} flag`} 
+            />
+          </div>   
         </div>
+
         <div className="nationality__name-container">
+          <div>
+            <p className="nat__name">
             {this.state.name}
+            </p>
+          </div>
         </div>
       </div>
     )

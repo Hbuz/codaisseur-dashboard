@@ -153,6 +153,14 @@ N103: createNationality(data: {nationality:"UZ",count:1}) {id}
   ns:createCompany(data: {name: "Nederlandse Spoorwegen", city: "Amsterdam", numberOfStudents: 1, domain: "ns.nl"}){id}
   greenHome:createCompany(data: {name: "Green Home", city: "Amsterdam", numberOfStudents: 4, domain: "greenhome.nl"}){id}
   rabobank: createCompany(data: {name: "Rabobank", city: "Utrecht", numberOfStudents: 2, domain: "rabobank.nl"}){id}
+  abnAmro: createCompany(data: {name: "ABN*AMRO", city: "Amsterdam", numberOfStudents: 2, domain: "abnamro.com"}){id}
+  scaleUpNation: createCompany(data: {name: "ScaleUpNation", city: "Amsterdam", numberOfStudents: 2, domain: "scaleupnation.com"}){id}
+  wetransfer: createCompany(data: {name: "wetransfer", city: "Amsterdam", numberOfStudents: 2, domain: "wetransfer.com"}){id}
+  asics: createCompany(data: {name: "asics", city: "Amsterdam", numberOfStudents: 2, domain: "asics.com"}){id}
+  epiphany: createCompany(data: {name: "epiphany", city: "Amsterdam", numberOfStudents: 2, domain: "epiphany-rbc.com"}){id}
+  kabisa: createCompany(data: {name: "kabisa", city: "Amsterdam", numberOfStudents: 2, domain: "kabisa.nl"}){id}
+  jaamo: createCompany(data: {name: "jaamo", city: "Amsterdam", numberOfStudents: 2, domain: "jaamo.nl"}){id}
+  youngcapital: createCompany(data: {name: "youngcapital", city: "Amsterdam", numberOfStudents: 2, domain: "youngcapital.nl"}){id}
 
   s1: createStudent(data: {name: "Sandro Sandri", age:32, gender:"M", city:"Amsterdam", 
   description:"I am a full stack web developer who enjoys coding and is passionate about design. I am looking for a full time position where I could challenge myself, gain valuable experience and grow with my team.", 

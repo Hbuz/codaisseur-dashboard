@@ -74,7 +74,7 @@ class FooterTicker extends React.PureComponent {
           <div className="entire-footer-ticker">
             {this.state.funnies.map(funny =>
             <div className="ticker-item">
-                {funny.item} {funny.count} {this.renderIndexIcon()}
+                {funny.item} {funny.count} index {this.renderIndexIcon()}
             </div>)}
           </div>
         </div>
