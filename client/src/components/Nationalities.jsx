@@ -9,7 +9,7 @@ class Nationalities extends React.PureComponent {
     this.state = {}
   }
   
-  getFlags = (api, countryCode) => { // From https://restcountries.eu/
+  getFlags = (api, countryCode) =>  // From https://restcountries.eu/
     fetch(api + countryCode)
     .then(response => response.json())
     .then(data => {
@@ -18,7 +18,7 @@ class Nationalities extends React.PureComponent {
         flag: country.flag,
         name: country.name})
     })
-  }
+  
 
   // componentDidMount() {
   //   console.log("SINGLE NATIONALITY: "+JSON.stringify(this.props.nationality))
