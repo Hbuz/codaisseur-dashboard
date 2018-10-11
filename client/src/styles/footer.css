@@ -1,4 +1,6 @@
 .footer {
-    height: 8.5vh;
-    background-color: black;
+  flex-shrink: 0;
+  text-align: center;
+  background-color: tomato;
+  color: white;
 }
