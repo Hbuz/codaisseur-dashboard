@@ -16,7 +16,6 @@ import Graduated from './components/Graduated'
 import FirstJob from './components/FirstJob'
 import FooterTicker from './components/layout/FooterTicker'
 
-
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
 });

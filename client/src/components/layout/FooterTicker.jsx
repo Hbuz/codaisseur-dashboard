@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import '../../styles/footerTicker.css'
 import downArrow from '../../assets/footer/Frame (3).png'
 import upArrow from '../../assets/footer/Frame (2).png'
+import smile from '../../assets/footer/motivated.svg'
 
 class FooterTicker extends React.PureComponent {
   constructor(props) {
@@ -69,11 +70,26 @@ class FooterTicker extends React.PureComponent {
   render() {
     return (
       <div className="entire-footer">
-        <div className="entire-footer-ticker">
-          {this.state.funnies.map(funny =>
-          <div className="ticker-item">
-            {funny.item} index {funny.count} {this.renderIndexIcon()}
-          </div>)}
+        <div className="footer-upper-half">
+          <div className="entire-footer-ticker">
+            {this.state.funnies.map(funny =>
+            <div className="ticker-item">
+                {funny.item} {funny.count} {this.renderIndexIcon()}
+            </div>)}
+          </div>
+        </div>
+        <div className="footer-lower-half">
+          <div className="entire-footer-hired-ticker">
+            <div className="hired-ticker-item">
+                Congrats to Atilla for his new job at Brendan&MacKenzie! <img className="footer-smile-img" src={smile} alt=''/>
+            </div>
+            <div className="hired-ticker-item">
+                Congrats to some other student who just got a job at some other company! <img className="footer-smile-img" src={smile} alt=''/>
+            </div>
+            <div className="hired-ticker-item">
+                Congrats to a second anonymous student at a second anonymous company! <img className="footer-smile-img" src={smile} alt=''/>
+            </div>
+          </div>
         </div>
       </div>
     )
