@@ -24,7 +24,7 @@ class EventContainer extends React.PureComponent {
         {
           getAllEvents (
             where: {date_gt: $dateNow}
-            first: 3
+            first: 4
             skip: 0
             orderBy: date_ASC
             ){

@@ -180,13 +180,13 @@ N103: createNationality(data: {nationality:"UZ",count:1}) {id}
 
 
     
-    e1: createEvents(data: {name: "MeetUP", date: 1538985600, description:"", where:"Codaisseur Building"}) {id}
-    e2: createEvents(data: {name: "Demo Night", date: 1539352800, description:"", where:"Codaisseur Building"}) {id}
-    e3: createEvents(data: {name: "Open Evening", date: 1541530800, description:"", where:"Codaisseur Building"}) {id}
-    e4: createEvents(data: {name: "Start academy", date: 1539329400, description:"", where:"Codaisseur Building"}) {id}
+    e1: createEvents(data: {name: "Demo Night", date: 1539266400, description:"", where:"Codaisseur Building"}) {id}
+    e2: createEvents(data: {name: "Homey Smart Home Roadshow", date: 1539279000, description:"", where:"Codaisseur Building"}) {id}
+    e3: createEvents(data: {name: "Codaisseur Academy", date: 1539588600, description:"", where:"Codaisseur Building"}) {id}
+    e4: createEvents(data: {name: "Open Evening", date: 1539795600, description:"", where:"Codaisseur Building"}) {id}
     e5: createEvents(data: {name: "Bootcamp", date: 1539329400, description:"", where:"Codaisseur Building"}) {id}
-    e6: createEvents(data: {name: "Conference", date: 1540537200, description:"", where:"Codaisseur Building"}) {id}
-    e7: createEvents(data: {name: "Past", date: 1518985600, description:"Past Event", where:"Codaisseur Building"}) {id}
+    e6: createEvents(data: {name: "Codaisseur Conference", date: 1540450800, description:"", where:"Codaisseur Building"}) {id}
+    e7: createEvents(data: {name: "Codaisseur Academy", date: 1533540600, description:"Past Event", where:"Codaisseur Building"}) {id}
 
 
     c1: createCourse(data: {date: 1539588600, type: "Programming", maleParticipants:18 , femaleParticipants:8}){id}

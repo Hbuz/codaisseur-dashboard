@@ -3,10 +3,9 @@ import moment from 'moment'
 import nextArrow from '../assets/events/noun_Next_1263686.svg'
 
 export default function Event({event}) {
-  const day = moment.unix(event.date).format("MMM MM, YYYY, h:mm A");
+  const day = moment.unix(event.date).format("MMM DD, YYYY, h:mm A");
 
   return (<div className="events-mapped-individual-container">
-    {/* {console.log("PROPROPRO: "+JSON.stringify(event))} */}
     <div>
       <h3>
         <img className="next-arrow-images" src={nextArrow} alt=''/> 
