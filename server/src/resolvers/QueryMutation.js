@@ -27,7 +27,6 @@ module.exports = {
       )
     },
     getAllFunnies: (_, args, context, info) => {
-      console.log("FIRE!!!!!!!!!!!!")
       return context.prisma.query.funnies(
         info,
       )
@@ -92,7 +91,6 @@ module.exports = {
       )
     },
     updateFunny: (_, {data, where}, context, info) => {
-      console.log(JSON.stringify(data)+ " "+JSON.stringify(where))
       return context.prisma.mutation.updateFunny(
         {
           where: {

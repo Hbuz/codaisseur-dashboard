@@ -154,15 +154,20 @@ N103: createNationality(data: {nationality:"UZ",count:1}) {id}
   greenHome:createCompany(data: {name: "Green Home", city: "Amsterdam", numberOfStudents: 4, domain: "greenhome.nl"}){id}
   rabobank: createCompany(data: {name: "Rabobank", city: "Utrecht", numberOfStudents: 2, domain: "rabobank.nl"}){id}
 
-  s1: createStudent(data: {name: "Sandro Sandri", age:32, gender:"M", city:"Amsterdam", description:"I'am a full stack developer!", 
+  s1: createStudent(data: {name: "Sandro Sandri", age:32, gender:"M", city:"Amsterdam", 
+  description:"I am a full stack web developer who enjoys coding and is passionate about design. I am looking for a full time position where I could challenge myself, gain valuable experience and grow with my team.", 
     graduationDate:"August 2018", status:"hired"}){id}
-  s2: createStudent(data: {name: "Mario Rossi", age:22, gender:"M", city:"Utrecht", description:"Wooooooooooooooooo", 
+  s2: createStudent(data: {name: "Mario Rossi", age:22, gender:"M", city:"Utrecht", 
+  description:"I look forward to join a smart and fun team that produces elegant solutions to interesting problems, and continue to learn and grow as a developer wherever I end up working.", 
     graduationDate:"August 2018", skills: {set: ["back end"]}, status:"hired"}){id}
-  s3: createStudent(data: {name: "Paola Paoli", age:36, gender:"F",city:"Amsterdam", description:"That was amazing!", 
+  s3: createStudent(data: {name: "Paola Paoli", age:36, gender:"F",city:"Amsterdam", 
+  description:"As a full stack developer with a passion for making quality web solutions, I would like to work for a company where I could apply my recently gained knowledge, challenge myself and have the ability to be creative.", 
     graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
-  s4: createStudent(data: {name: "John Smith", age:26, gender:"M",city:"Rotterdam", description:"bla bla bla bla", 
+  s4: createStudent(data: {name: "John Smith", age:26, gender:"M",city:"Rotterdam", 
+  description:"To acquire more in-depth coding skills by on-the-job experience, and to learn about the culture and know hows of the field. I aim to become a professional after a few years.", 
     graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"hired"}){id}
-  s5: createStudent(data: {name: "Michael Rodriguez", age:29, gender:"M",city:"Leiden", description:"I like computers", 
+  s5: createStudent(data: {name: "Michael Rodriguez", age:29, gender:"M",city:"Leiden", 
+  description:"Coming from a music background, i'm used to learning a language that doesn't easily come from the human mouth. Music and travel are my passions and I would love a job in those fields, but most of all i'm looking for a company to grow in and learn new skills.", 
     graduationDate:"August 2018", skills: {set: ["back end", "full stack", "react", "redux"]}, status:"Ready to work for you!"}){id}
 
 
