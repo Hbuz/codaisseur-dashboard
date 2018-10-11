@@ -46,7 +46,7 @@ class NationalitiesContainer extends React.PureComponent {
       }
       natQuery(this.state.page * 5)
       this.setState({ page: ++page })
-    }, 1000)
+    }, 10000)
   }
 
 
