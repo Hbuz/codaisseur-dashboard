@@ -15,6 +15,9 @@
   text-align: center;
   margin-top: -1%;
   margin-bottom: -5%;
+  font-size: 1.6rem;
+  color: #E94C4C;
+  font-weight: bold;
 }
 
 .nationality__flag-container{
@@ -79,6 +82,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+*/
 
 p{
   font-size: 1.6rem;

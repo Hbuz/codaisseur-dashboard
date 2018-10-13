@@ -26,15 +26,17 @@
     bottom: 0;
     width: 100%;
     overflow: hidden;
-    height: 4rem;
-    background-color:#ffff;
+    height: 7rem;
     padding-left: 100%;
     box-sizing: content-box;
+    background: linear-gradient(to bottom, white 0%,white 50%,#000000 50%,black 50%,black 100%);
   }
+
   .entire-footer .entire-footer-ticker {
     display: inline-block;
-    height: 4rem;
-    line-height: 4rem;
+    background-color:#ffff;
+    height: 3.5rem;
+    line-height: 3.5rem;
     white-space: nowrap;
     padding-right: 100%;
     box-sizing: content-box;
@@ -44,9 +46,28 @@
     animation-timing-function: linear;
     -webkit-animation-name: ticker;
     animation-name: ticker;
-    -webkit-animation-duration: 30s;
-    animation-duration: 30s;
+    -webkit-animation-duration: 20s;
+    animation-duration: 20s;
   }
+
+  .entire-footer .entire-footer-hired-ticker {
+    display: inline-block;
+    background-color: black;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    white-space: nowrap;
+    padding-right: 100%;
+    box-sizing: content-box;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 50s;
+    animation-duration: 50s;
+  }
+
   .entire-footer .ticker-item {
     display: inline-block;
     padding: 0 4rem;
@@ -54,6 +75,17 @@
     color: black;
   }
 
+  .entire-footer .hired-ticker-item {
+    display: inline-block;
+    padding: 0 4rem;
+    font-size: 1.5rem;
+    color: white;
+  }
+
   .ticker-item img {
+    height: 2vh;
+  }
+
+  .footer-smile-img {
     height: 2vh;
   }

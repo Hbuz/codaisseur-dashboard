@@ -43,6 +43,6 @@
 }
 
 .btn-company-logo-image img{
-    max-width: 85%;
-    max-height: 85%;
+    width: 7vh;
+    height: 7vh;
 }

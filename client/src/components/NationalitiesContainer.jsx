@@ -36,7 +36,7 @@ class NationalitiesContainer extends React.PureComponent {
         }}`,
       variables: { page: page }
     }).then(response => this.setState({ currentNationalities: response.data.getAllNationalities }))
-
+  
 
     setInterval(() => {
       let page = this.state.page
@@ -46,7 +46,7 @@ class NationalitiesContainer extends React.PureComponent {
       }
       natQuery(this.state.page * 5)
       this.setState({ page: ++page })
-    }, 10000)
+    }, 4000)
   }
 
 

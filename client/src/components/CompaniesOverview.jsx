@@ -27,7 +27,9 @@ class CompaniesOverview extends React.PureComponent {
   render() {
     return (
       <div className="btn-company-logo-image">
-        <img src={this.state.logo} alt={this.props.company.name}/>
+        <img  src={this.state.logo} 
+              alt={this.props.company.name}
+        />
       </div>)
   }
 }
